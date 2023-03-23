@@ -1,11 +1,11 @@
 'use client'
-import { Header } from '@/components/hearder'
+import { Header } from '../../components/hearder'
 import { EmblaOptionsType } from 'embla-carousel-react'
 
 
 import { Outfit, Roboto } from 'next/font/google'
-import   EmblaCarousel  from '@/components/EmblaCarousel'
-import { GetProjects } from '@/components/GetProjetcs'
+import   EmblaCarousel  from '../../components/EmblaCarousel'
+import { GetProjects } from '../../components/GetProjetcs'
 
 import styles from './styles.module.scss'
 import { useEffect, useState } from 'react'

@@ -1,5 +1,5 @@
 
-import { Header } from '@/components/hearder'
+import { Header } from '../../../components/hearder'
 
 import { Outfit, Roboto } from 'next/font/google'
 

@@ -1,5 +1,5 @@
 
-import { Header } from '@/components/hearder'
+import { Header } from "../components/hearder"
 import Image from 'next/image'
 
 import StudyingImg from '../images/Studying-amico.svg'
