@@ -4,10 +4,8 @@ import { EmblaOptionsType } from 'embla-carousel-react'
 
 
 import { Outfit, Roboto } from 'next/font/google'
-import   EmblaCarousel  from '../../components/EmblaCarousel'
 import { GetProjects } from '../../components/GetProjetcs'
 
-import styles from './styles.module.scss'
 import { useEffect, useState } from 'react'
 
 const outfit = Outfit({
@@ -22,12 +20,7 @@ const roboto = Roboto({
 })
 
 
-
-const OPTIONS: EmblaOptionsType = { loop: true }
-const SLIDE_COUNT = 5
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
-
-export default function Home() {
+export default function Projects() {
   
   const [query, setQuery] = useState('all');
 
@@ -68,28 +61,26 @@ export default function Home() {
 
   
   return (
-    <>
-      <Header />
+    <div className="px-4 mx-auto lg:max-w-[78%]">
 
-      <section className={styles.carousel__content}>
-        <h1 className={outfit.className}>Best ones</h1>
-        <EmblaCarousel slides={SLIDES} options={OPTIONS} /> 
+      <section className="mt-20">
+        <h1 className={`${outfit.className} text-center font-bold text-5xl mb-12`}>Best Projects</h1>
 
       </section>
 
-      <div className={`${styles.filter} ${roboto.className}`}>
+      <div className={`${roboto.className} flex justify-between w-full md:w-[28rem] mb-16`}>
         <p onClick={ () => setQuery('all')}>All</p>
         <p onClick={ () => setQuery('frontend')} >Front End</p>
         <p onClick={ () => setQuery('backend')}>Back End</p>
         <p>Full Stack</p>
       </div>
 
-      <div className={styles.overall__project__container}>
+      <div className='flex flex-col items-center justify-center md:flex-wrap md:flex-row md:justify-between'>
       { results.map(data => (
         <GetProjects data={data} key={data.projectId} />
       ))}
         
       </div>
-    </>
+    </div>
   )
 }

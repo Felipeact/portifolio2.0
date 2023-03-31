@@ -1,5 +1,5 @@
 {
-  "name": "portifolio1.0",
+  "name": "admin",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,24 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/node": "18.14.2",
-    "@types/react": "18.0.28",
+    "@types/node": "18.15.10",
+    "@types/react": "18.0.29",
     "@types/react-dom": "18.0.11",
-    "embla-carousel-autoplay": "^7.0.9",
-    "embla-carousel-react": "^7.0.9",
-    "eslint": "8.35.0",
-    "eslint-config-custom": "*",
-    "eslint-config-next": "13.2.1",
-    "next": "13.2.1",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4",
+    "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tsconfig": "*",
-    "typescript": "4.9.5"
+    "typescript": "5.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
-    "sass": "^1.58.3",
     "tailwindcss": "^3.2.7"
   }
 }

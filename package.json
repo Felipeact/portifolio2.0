@@ -13,13 +13,19 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@headlessui/react": "^1.7.13",
     "eslint-config-custom": "*",
+    "phosphor-react": "^1.4.1",
     "prettier": "latest",
     "turbo": "latest"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
-  "packageManager": "npm@9.5.1"
+  "packageManager": "npm@9.5.1",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "html2canvas": "^1.4.1",
+    "tailwind-scrollbar": "^3.0.0"
+  }
 }
