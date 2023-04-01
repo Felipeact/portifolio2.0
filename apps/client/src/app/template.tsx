@@ -1,5 +1,6 @@
-import { Header } from "../components/hearder";
 import { Widget } from "../components/Widget";
+import { Header } from "../components/hearder";
+
 
 export default function Template({ children }: {
   children: React.ReactNode

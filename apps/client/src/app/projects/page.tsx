@@ -1,6 +1,4 @@
 'use client'
-import { Header } from '../../components/hearder'
-import { EmblaOptionsType } from 'embla-carousel-react'
 
 
 import { Outfit, Roboto } from 'next/font/google'

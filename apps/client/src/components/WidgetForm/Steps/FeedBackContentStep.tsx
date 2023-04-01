@@ -1,7 +1,7 @@
 import { ArrowLeft } from "phosphor-react";
 import { FormEvent, useState } from "react";
 import { FeedbackType, feedbackTypes } from "..";
-import { CloseButton } from "../../CloseButton";
+import { CloseButton } from "../../Widget/CloseButton";
 
 interface FeedbackContentStepProps {
   feedbackType: FeedbackType;
@@ -37,8 +37,9 @@ export function FeedbackContentStep( { feedbackType, onFeedbackRestartRequested,
         <span className="text-xl leading-6 flex items-center gap-2">
           <img 
           className="w-6 h-6"
-          src={feedbackTypeInfo.image.source} 
-          alt={feedbackTypeInfo.image.alt} />
+          // src={feedbackTypeInfo.image.source} 
+          // alt={feedbackTypeInfo.image.alt} 
+          />
           {feedbackTypeInfo.title}
         </span>
 

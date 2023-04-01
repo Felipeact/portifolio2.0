@@ -73,9 +73,9 @@ export function Header() {
                   </Link>
                 </li>
                 <li className="text-white">
-                  <a href="/projects">
+                  <Link href="/projects">
                     projects
-                  </a>
+                  </Link>
                 </li>
                 <li className="text-white">
                   <Link href="/my-world">
