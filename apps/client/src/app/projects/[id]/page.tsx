@@ -17,8 +17,9 @@ const roboto = Roboto({
 export default function Home() {
   return (
     <>
-      <Header />
-
+      <div>
+        hi
+      </div>
 
     </>
   )

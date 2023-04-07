@@ -1,10 +1,28 @@
 'use client'
-
-
 import { Outfit, Roboto } from 'next/font/google'
 import { GetProjects } from '../../components/GetProjetcs'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+};
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -19,8 +37,9 @@ const roboto = Roboto({
 
 
 export default function Projects() {
-  
+
   const [query, setQuery] = useState('all');
+  const [selectedId, setSelectedId] : any = useState(null)
 
   const projects = [
     {
@@ -28,20 +47,20 @@ export default function Projects() {
       projectName: 'News',
       projectDescription: 'exemplo 1',
       type: 'frontend'
-      
+
     },
     {
       projectId: '2',
       projectName: 'News 2',
       projectDescription: 'exemplo 2',
       type: 'backend'
-      
+
     },
     {
       projectId: '3',
       projectName: 'News 3',
       projectDescription: 'exemplo 3',
-      
+
     },
   ]
 
@@ -49,36 +68,38 @@ export default function Projects() {
 
   const results = projects.filter((value) => {
     if (value.type === query)
-    return value.type
+      return value.type
 
-    if ( query === 'all')
-    return value
-  } 
-    
+    if (query === 'all')
+      return value
+  }
+
   )
 
-  
+
   return (
-    <div className="px-4 mx-auto lg:max-w-[78%]">
+    <main className="min-h-screen bg-blur bg-cover bg-no-repeat bg-fixed ">
 
-      <section className="mt-20">
-        <h1 className={`${outfit.className} text-center font-bold text-5xl mb-12`}>Best Projects</h1>
+      <div className="mx-auto lg:max-w-[78%]">
 
-      </section>
+        <section>
+          <h1 className={`${outfit.className} text-center font-bold text-5xl mb-12 pt-20`}>Best Projects</h1>
+        </section>
 
-      <div className={`${roboto.className} flex justify-between w-full md:w-[28rem] mb-16`}>
-        <p onClick={ () => setQuery('all')}>All</p>
-        <p onClick={ () => setQuery('frontend')} >Front End</p>
-        <p onClick={ () => setQuery('backend')}>Back End</p>
-        <p>Full Stack</p>
+        <div className={`flex justify-between w-[76%]  md:w-[28rem] mb-16 mx-auto `}>
+          <p onClick={() => setQuery('all')}>All</p>
+          <p onClick={() => setQuery('frontend')} >Front End</p>
+          <p onClick={() => setQuery('backend')}>Back End</p>
+          <p>Full Stack</p>
+        </div>
+
+        <div className='grid grid-rows-1 w-11/12 items-center mx-auto justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4'>
+          {results.map(data => (
+            <GetProjects data={data} key={data.projectId} />
+          ))}
+
+        </div>
       </div>
-
-      <div className='flex flex-col items-center justify-center md:flex-wrap md:flex-row md:justify-between'>
-      { results.map(data => (
-        <GetProjects data={data} key={data.projectId} />
-      ))}
-        
-      </div>
-    </div>
+    </main>
   )
 }
