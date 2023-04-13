@@ -1,4 +1,6 @@
+'use client'
 import Image from 'next/image'
+import { Typewriter } from 'react-simple-typewriter'
 
 import StudyingImg from '../images/Studying-amico.svg'
 import { Outfit, Roboto } from 'next/font/google'
@@ -23,12 +25,20 @@ export default function Home() {
 
 
       <section className='md:w-3/6'>
-        <h1 className="text-5xl xl:text-7xl font-bold my-12">I am a Software Developer and Front End Developer</h1>
+        <h1 className={`${ outfit.className } text-5xl xl:text-7xl font-bold my-12`}>
+          I am a  
+          <Typewriter 
+            
+            words={[' Software', ' Front End' ]}
+            loop={5}
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+          <br />
+           Developer
+          </h1>
         <p className={` ${roboto.className} text-lg mt-16`}>passionate to help you solve problem , build products or grow an existing project .</p>
-        <button 
-        className={` ${roboto.className} mt-12 p-1 w-28 h-12 text-white font-bold bg-purple-600 rounded-md animate-bounce hover:animate-none hover:bg-transparent hover:border-2 hover:border-purple-600 `}>
-          Hire me
-        </button>
       </section>
 
       <Image src={StudyingImg} alt="Studying Img" className=' hidden md:block' />

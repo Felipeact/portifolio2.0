@@ -93,7 +93,7 @@ export default function Projects() {
           <p>Full Stack</p>
         </div>
 
-        <div className='grid grid-rows-1 w-11/12 items-center mx-auto justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4'>
+        <div className='grid grid-rows-1 w-11/12 items-center mx-auto sm:justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4'>
           {results.map(data => (
             <GetProjects data={data} key={data.projectId} />
           ))}
