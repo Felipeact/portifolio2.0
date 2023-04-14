@@ -21,7 +21,7 @@ export default function Home() {
 
 
   return (
-    <main className="min-h-screen bg-blur bg-cover bg-no-repeat bg-fixed px-4 mx-auto flex items-center justify-center ">
+    <main className="min-h-screen md:min-h-[calc(100vh_-_4.6rem)] bg-blur bg-cover bg-no-repeat bg-fixed px-4 mx-auto flex items-center justify-center ">
 
 
       <section className='md:w-3/6'>
