@@ -4,6 +4,7 @@ import { Outfit, Roboto } from "next/font/google"
 import Image from "next/image"
 import { Cards, HardDrives } from "phosphor-react"
 import { useState } from "react"
+import { Scrolltools } from "../../components/ScrollTools"
 
 import StudyingImg from '../../images/Studying-amico.svg'
 
@@ -65,6 +66,11 @@ export default function About() {
         </div>
       </div>
 
+
+      <section className="mx-auto w-full lg:max-w-[78%] md:flex md:justify-center items-center mt-52">
+        <Scrolltools baseVelocity={10} />
+      </section>
+
       <div className="mx-auto w-11/12 mt-40 md:flex md:justify-between ">
         <div className="flex items-center justify-center mb-8 p-8 md:flex-col md:justify-start">
           <h2 className={`${outfit.className} text-6xl capitalize font-bold text-right md:mb-14`}> 2+ </h2>
@@ -90,10 +96,10 @@ export default function About() {
       </div>
 
       <div className="mx-auto w-[80%] lg:max-w-[78%] mt-28">
-        <h2 className="text-6xl capitalize font-bold mb-14">Education</h2>
+        <h2 className="text-6xl capitalize font-bold mb-14 ">Education</h2>
 
         <div >
-          <div className="md:flex md:justify-between mb-8">
+          <div className="md:w-11/12 md:flex md:justify-between mb-8 ">
             <motion.div 
             className="cursor-pointer"
             whileTap={{ scale: 0.95 }}
@@ -110,11 +116,11 @@ export default function About() {
           className="mt-8"
           animate={isVisible ? show : hide}
           >
-            <table className="w-11/12 border-spacing-y-2 border-separate table-auto mb-8">
+            <table className="w-11/12 border-spacing-y-2 border-separate table-auto mb-1">
               <thead>
                 <tr>
                   <th className="font-normal text-left px-8 py-4">Title</th>
-                  <th className="font-normal text-left px-8 py-4">Date</th>
+                  <th className="font-normal text-left px-8 py-4">Grade</th>
                 </tr>
               </thead>
 
@@ -132,16 +138,64 @@ export default function About() {
 
               </tbody>
             </table>
+
+            <table className="w-11/12 border-spacing-y-2 border-separate table-auto mb-8">
+              <thead>
+                <tr>
+                  <th className="font-normal text-left px-8 py-4">GPA</th>
+                  <th className="font-normal text-left px-8 py-4">Total</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Overall GPA</td>
+                  <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg "> 94 </td>
+                </tr>
+              </tbody>
+            </table>
           </motion.div>
         </div>
 
-        <div className="md:flex md:justify-between mb-8 pb-8">
+        <div className="md:w-11/12 md:flex md:justify-between mb-8 pb-8">
           <div className="cursor-pointer">
             <h3 className="text-4xl capitalize font-bold mb-2">React JS Developer</h3>
             <p className="mb-2">Rocketseat</p>
             <span>Online | Brazil</span>
           </div>
           <span className="hidden md:block md:p-1 md:border md:border-purple-600 md:rounded-lg md:font-bold md:h-fit ">Closed</span>
+        </div>
+
+      </div>
+
+      <div className="mx-auto w-[80%] lg:max-w-[78%] mt-12">
+        <h2 className="text-6xl capitalize font-bold mb-14 ">Experience</h2>
+
+        <div className="md:flex md:justify-between mb-8 pb-8">
+          <div className="cursor-pointer">
+            <h3 className="text-4xl capitalize font-bold mb-2">Web Developer</h3>
+            <p className="mb-2">Freelancer</p>
+            <span>Remote | Canada</span>
+          </div>
+          {/* <span className="hidden md:block md:p-1 md:border md:border-purple-600 md:rounded-lg md:font-bold md:h-fit ">Closed</span> */}
+        </div>
+
+        <div className="md:flex md:justify-between mb-8 pb-8">
+          <div className="cursor-pointer">
+            <h3 className="text-4xl capitalize font-bold mb-2">Web Developer</h3>
+            <p className="mb-2">Freelancer</p>
+            <span>Remote | Canada</span>
+          </div>
+          {/* <span className="hidden md:block md:p-1 md:border md:border-purple-600 md:rounded-lg md:font-bold md:h-fit ">Closed</span> */}
+        </div>
+
+        <div className="md:flex md:justify-between mb-8 pb-8">
+          <div className="cursor-pointer">
+            <h3 className="text-4xl capitalize font-bold mb-2">Web Developer</h3>
+            <p className="mb-2">Freelancer</p>
+            <span>Remote | Canada</span>
+          </div>
+          {/* <span className="hidden md:block md:p-1 md:border md:border-purple-600 md:rounded-lg md:font-bold md:h-fit ">Closed</span> */}
         </div>
 
       </div>

@@ -84,6 +84,8 @@ export default function Projects() {
 
         <section>
           <h1 className={`${outfit.className} text-center font-bold text-5xl mb-12 pt-20`}>Best Projects</h1>
+
+          
         </section>
 
         <div className={`flex justify-between w-[76%]  md:w-[28rem] mb-16 mx-auto `}>
