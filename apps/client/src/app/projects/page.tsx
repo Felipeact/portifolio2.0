@@ -4,25 +4,6 @@ import { GetProjects } from '../../components/GetProjetcs'
 
 import { useState } from 'react'
 
-const container = {
-  hidden: { opacity: 1, scale: 0 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2
-    }
-  }
-};
-
-const item = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1
-  }
-};
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -39,7 +20,6 @@ const roboto = Roboto({
 export default function Projects() {
 
   const [query, setQuery] = useState('all');
-  const [selectedId, setSelectedId] : any = useState(null)
 
   const projects = [
     {
@@ -62,6 +42,7 @@ export default function Projects() {
       projectDescription: 'exemplo 3',
 
     },
+   
   ]
 
 
@@ -97,7 +78,7 @@ export default function Projects() {
 
         <div className='grid grid-rows-1 w-11/12 items-center mx-auto sm:justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4'>
           {results.map(data => (
-            <GetProjects data={data} key={data.projectId} />
+              <GetProjects data={data} key={data.projectId} />
           ))}
 
         </div>

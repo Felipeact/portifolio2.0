@@ -4,7 +4,6 @@ import { Outfit, Roboto } from "next/font/google"
 import Image from "next/image"
 import { Cards, HardDrives } from "phosphor-react"
 import { useState } from "react"
-import { Scrolltools } from "../../components/ScrollTools"
 
 import StudyingImg from '../../images/Studying-amico.svg'
 
@@ -37,7 +36,7 @@ export default function About() {
   return (
     <main className="min-h-screen bg-blur bg-cover bg-no-repeat bg-fixed md:p-8 ">
 
-      <div className="mx-auto w-full lg:max-w-[78%] md:flex md:justify-center items-center">
+      <div className="mx-auto w-full lg:max-w-[78%] md:flex md:justify-center items-center mb-8">
         <div className="flex flex-col items-center justify-center md:items-start  z">
           <h1 className={`${outfit.className} font-bold text-6xl md:text-9xl mb-16 mt-40`}>
             Felipe <br />
@@ -65,11 +64,6 @@ export default function About() {
           </motion.div>
         </div>
       </div>
-
-
-      <section className="mx-auto w-full lg:max-w-[78%] md:flex md:justify-center items-center mt-52">
-        <Scrolltools baseVelocity={10} />
-      </section>
 
       <div className="mx-auto w-11/12 mt-40 md:flex md:justify-between ">
         <div className="flex items-center justify-center mb-8 p-8 md:flex-col md:justify-start">
@@ -108,6 +102,7 @@ export default function About() {
               <h3 className="text-4xl capitalize font-bold mb-2">Computer System</h3>
               <p className="mb-2">British Columbia Institute of Technology <span>(BCIT)</span></p>
               <span>Vancouver | Canada</span>
+              <span className="block text-purple-600 font-bold">see more</span>
             </motion.div >
             <span className="hidden md:block md:p-1 md:border md:border-green-400 md:rounded-lg md:font-bold md:h-fit ">Current</span>
           </div>
@@ -164,38 +159,6 @@ export default function About() {
             <span>Online | Brazil</span>
           </div>
           <span className="hidden md:block md:p-1 md:border md:border-purple-600 md:rounded-lg md:font-bold md:h-fit ">Closed</span>
-        </div>
-
-      </div>
-
-      <div className="mx-auto w-[80%] lg:max-w-[78%] mt-12">
-        <h2 className="text-6xl capitalize font-bold mb-14 ">Experience</h2>
-
-        <div className="md:flex md:justify-between mb-8 pb-8">
-          <div className="cursor-pointer">
-            <h3 className="text-4xl capitalize font-bold mb-2">Web Developer</h3>
-            <p className="mb-2">Freelancer</p>
-            <span>Remote | Canada</span>
-          </div>
-          {/* <span className="hidden md:block md:p-1 md:border md:border-purple-600 md:rounded-lg md:font-bold md:h-fit ">Closed</span> */}
-        </div>
-
-        <div className="md:flex md:justify-between mb-8 pb-8">
-          <div className="cursor-pointer">
-            <h3 className="text-4xl capitalize font-bold mb-2">Web Developer</h3>
-            <p className="mb-2">Freelancer</p>
-            <span>Remote | Canada</span>
-          </div>
-          {/* <span className="hidden md:block md:p-1 md:border md:border-purple-600 md:rounded-lg md:font-bold md:h-fit ">Closed</span> */}
-        </div>
-
-        <div className="md:flex md:justify-between mb-8 pb-8">
-          <div className="cursor-pointer">
-            <h3 className="text-4xl capitalize font-bold mb-2">Web Developer</h3>
-            <p className="mb-2">Freelancer</p>
-            <span>Remote | Canada</span>
-          </div>
-          {/* <span className="hidden md:block md:p-1 md:border md:border-purple-600 md:rounded-lg md:font-bold md:h-fit ">Closed</span> */}
         </div>
 
       </div>
