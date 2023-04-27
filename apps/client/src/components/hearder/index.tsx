@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Outfit } from 'next/font/google';
 import Image from 'next/image';
 
-import LogoImg from '../../../public/logo3.png'
+import LogoImg from '../../../public/logo.png'
 
 
 const outfit = Outfit({
