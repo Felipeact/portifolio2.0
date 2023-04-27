@@ -2,7 +2,9 @@
 import { useState } from 'react';
 import Link from "next/link";
 import { Outfit } from 'next/font/google';
+import Image from 'next/image';
 
+import LogoImg from '../../../public/logo.png'
 
 
 const outfit = Outfit({
@@ -20,7 +22,7 @@ export function Header() {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link href="/">
-                <h2 className="text-2xl text-white font-bold">Felipe Viana</h2>
+                <Image src={LogoImg} alt="logo" loading="lazy" />
               </Link>
               <div className="md:hidden">
                 <button

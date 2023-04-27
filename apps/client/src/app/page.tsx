@@ -59,7 +59,7 @@ export default function Home() {
       </div>
 
 
-      <div className="mx-auto pb-8 xl:max-w-[80%] md:p-4 md:flex md:flex-col">
+      <div className="mx-auto pb-24 xl:max-w-[80%]  md:flex md:flex-col ">
         <h2 className="text-5xl font-bold mb-8"> My Time Line </h2>
         <motion.div
         >

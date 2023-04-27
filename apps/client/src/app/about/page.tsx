@@ -131,10 +131,20 @@ export default function About() {
                   <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg"> 92 </td>
                 </tr>
 
+                <tr>
+                  <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Applied Computer Concepts</td>
+                  <td className="px-8 py-4 border-none bg-[#ffffff] text-purple-600 font-bold rounded-r-lg"> in progress ... </td>
+                </tr>
+
+                <tr>
+                  <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Programming Part 1 Python</td>
+                  <td className="px-8 py-4 border-none bg-[#ffffff] text-purple-600 font-bold rounded-r-lg"> in progress ... </td>
+                </tr>
+
               </tbody>
             </table>
 
-            <table className="w-11/12 border-spacing-y-2 border-separate table-auto mb-8">
+            <table className=" border-spacing-y-2 border-separate table-auto mb-8">
               <thead>
                 <tr>
                   <th className="font-normal text-left px-8 py-4">GPA</th>
@@ -145,7 +155,7 @@ export default function About() {
               <tbody>
                 <tr>
                   <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Overall GPA</td>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg "> 94 </td>
+                  <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg "> 95 </td>
                 </tr>
               </tbody>
             </table>
