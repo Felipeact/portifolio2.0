@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { LinkedinLogo } from 'phosphor-react';
 
-import LogoImg from '../../../public/logo3.png'
+import LogoImg from '../../../public/logo.png'
 
 const outfit = Outfit({
   subsets: ['latin'],
