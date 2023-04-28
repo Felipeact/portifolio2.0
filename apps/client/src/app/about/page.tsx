@@ -1,9 +1,9 @@
 'use client'
-import { motion } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { Outfit, Roboto } from "next/font/google"
 import Image from "next/image"
 import { Cards, HardDrives } from "phosphor-react"
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 import StudyingImg from '../../images/Studying-amico.svg'
 
@@ -32,6 +32,10 @@ const hide = {
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null)
+  const isInView = useInView(ref)
+
+  console.log(isInView)
 
   return (
     <main className="min-h-screen bg-blur bg-cover bg-no-repeat bg-fixed md:p-8 ">
@@ -93,7 +97,11 @@ export default function About() {
         <h2 className="text-6xl capitalize font-bold mb-14 ">Education</h2>
 
         <div >
-          <div className="md:w-11/12 md:flex md:justify-between mb-8 ">
+          <div className="md:w-11/12 md:flex md:justify-between mb-8 " ref={ref} style={{
+          transform: isInView ? "none" : "translateX(200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+        }}>
             <motion.div 
             className="cursor-pointer"
             whileTap={{ scale: 0.95 }}
@@ -131,20 +139,10 @@ export default function About() {
                   <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg"> 92 </td>
                 </tr>
 
-                <tr>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Applied Computer Concepts</td>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-purple-600 font-bold rounded-r-lg"> in progress ... </td>
-                </tr>
-
-                <tr>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Programming Part 1 Python</td>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-purple-600 font-bold rounded-r-lg"> in progress ... </td>
-                </tr>
-
               </tbody>
             </table>
 
-            <table className=" border-spacing-y-2 border-separate table-auto mb-8">
+            <table className="w-11/12 border-spacing-y-2 border-separate table-auto mb-8">
               <thead>
                 <tr>
                   <th className="font-normal text-left px-8 py-4">GPA</th>
@@ -155,14 +153,18 @@ export default function About() {
               <tbody>
                 <tr>
                   <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Overall GPA</td>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg "> 95 </td>
+                  <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg "> 94 </td>
                 </tr>
               </tbody>
             </table>
           </motion.div>
         </div>
 
-        <div className="md:w-11/12 md:flex md:justify-between mb-8 pb-8">
+        <div className="md:w-11/12 md:flex md:justify-between mb-8 pb-8" ref={ref} style={{
+          transform: isInView ? "none" : "translateX(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+        }}>
           <div className="cursor-pointer">
             <h3 className="text-4xl capitalize font-bold mb-2">React JS Developer</h3>
             <p className="mb-2">Rocketseat</p>
