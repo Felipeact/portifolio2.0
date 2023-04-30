@@ -80,39 +80,39 @@ export default function Home() {
               <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> My Portifolio </p>
               <p className='text-stone-300 ml-12'> Started to design my portifolio </p>
             </div>
-            <span
-              className="cursor-pointer"
-              onClick={() => setIsVisible(!isVisible)}
-            >
-              {isVisible ? 'close' : ' show more'}
-            </span>
           </section>
         </motion.div>
         <motion.div
           className="mt-4"
           animate={isVisible ? show : hide}
-        >  
+        >
 
           <section>
-          <h3 className="text-3xl font-bold mb-4">2022</h3>
+            <h3 className="text-3xl font-bold mb-4">2022</h3>
 
-          <div className='mb-4' >
-            <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>From Driver to Dispatcher </p>
-            <p className='text-stone-300 ml-12'> I was working as a driver for a company 
-            called Diamond Delivery and after 8 I got a offer to work as dispatcher</p>
-          </div>
+            <div className='mb-4' >
+              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>From Driver to Dispatcher </p>
+              <p className='text-stone-300 ml-12'> I was working as a driver for a company
+                called Diamond Delivery and after 8 I got a offer to work as dispatcher</p>
+            </div>
 
-          <div className='mb-4' >
-            <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> Working on front end Projects </p>
-          </div>
+            <div className='mb-4' >
+              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> Working on front end Projects </p>
+            </div>
 
-          <div className='mb-4' >
-            <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>Web Developer Volunteer </p>
-          </div>
+            <div className='mb-4' >
+              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>Web Developer Volunteer </p>
+            </div>
 
           </section>
-          
+
         </motion.div>
+        <span
+          className="cursor-pointer"
+          onClick={() => setIsVisible(!isVisible)}
+        >
+          {isVisible ? 'close' : ' show more'}
+        </span>
       </div>
 
     </main >
