@@ -15,7 +15,7 @@ export function Footer() {
 
   return (
     <footer className={`${outfit.className}  border-t border-gray-600  h-24`}>
-      <div className=" w-full bg-gray-700 flex justify-around items-center h-full">
+      <div className=" px-8 mx-auto  bg-gray-700 flex justify-between items-center h-full">
         <Image src={LogoImg} alt="Logo" />
         <div>
           <p className="text-xl mb-2"> Keep in touch with me</p>

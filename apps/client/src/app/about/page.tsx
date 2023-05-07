@@ -61,7 +61,7 @@ export default function About() {
               ease: "easeInOut",
               times: [0, 0.2, 0.5, 0.8, 1],
               repeat: Infinity,
-              repeatDelay: 9
+              repeatDelay: 5
             }}
           >
             <Image src={StudyingImg} alt="Studying Img" />
@@ -170,7 +170,7 @@ export default function About() {
           </motion.div>
         </div>
 
-        <div className="md:w-11/12 md:flex md:justify-between mb-8 pb-8" ref={ref} style={{
+        <div className="md:w-11/12 md:flex md:justify-between pb-24" ref={ref} style={{
           transform: isInView ? "none" : "translateX(-200px)",
           opacity: isInView ? 1 : 0,
           transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"

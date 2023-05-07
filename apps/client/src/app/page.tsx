@@ -40,7 +40,7 @@ export default function Home() {
       <div className='flex items-center justify-center h-screen'>
 
         <section className='md:w-3/6'>
-          <h1 className={`${outfit.className} text-5xl xl:text-7xl font-bold my-12`}>
+          <h1 className={`${outfit.className} text-center md:text-left text-5xl xl:text-7xl font-bold my-12`}>
             I am a
             <Typewriter
 
@@ -53,13 +53,13 @@ export default function Home() {
             <br />
             Developer
           </h1>
-          <p className={` ${roboto.className} text-lg mt-16`}>Passionate to help you solve problems , build products or grow an existing project .</p>
+          <p className={` ${roboto.className} text-center md:text-left text-lg mt-16`}>Passionate to help you solve problems , build products or grow an existing project .</p>
         </section>
         <Image src={StudyingImg} alt="Studying Img" className=' hidden md:block' />
       </div>
 
 
-      <div className="mx-auto pb-24 xl:max-w-[80%]  md:flex md:flex-col ">
+      <div className="mx-auto pb-24 xl:max-w-[80%] text-center md:text-left  md:flex md:flex-col  ">
         <h2 className="text-5xl font-bold mb-8"> My Time Line </h2>
         <motion.div
         >
