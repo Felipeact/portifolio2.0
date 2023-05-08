@@ -1,9 +1,11 @@
 'use client'
 import Image from 'next/image'
+import { EmblaOptionsType } from 'embla-carousel-react'
 
 import { Outfit, Roboto } from 'next/font/google'
 
 import ExmploImg from '../../../images/slide-3.jpg'
+import EmblaCarousel from '../../../components/Carousel'
 
 
 const outfit = Outfit({
@@ -17,6 +19,10 @@ const roboto = Roboto({
   weight: '400'
 })
 
+
+const OPTIONS: EmblaOptionsType = {}
+const SLIDE_COUNT = 10
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 
 export default function ProjectsId() {
@@ -64,7 +70,11 @@ export default function ProjectsId() {
           </section>
         </div>
 
-
+        <div className=" w-full max-w-[67rem]">
+          <div className="relative">
+            <EmblaCarousel slides={SLIDES} options={OPTIONS}/>
+          </div>
+        </div>
 
 
       </div>
