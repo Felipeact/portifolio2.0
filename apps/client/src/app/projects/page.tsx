@@ -4,7 +4,7 @@ import { Outfit, Roboto } from 'next/font/google'
 
 import { GetProjects } from '../../components/GetProjetcs'
 import { api } from '../../services/api'
-import { Loading } from './loading'
+import Loading from './loading'
 
 
 const outfit = Outfit({
