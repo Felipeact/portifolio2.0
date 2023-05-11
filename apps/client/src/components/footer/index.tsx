@@ -14,8 +14,8 @@ const outfit = Outfit({
 export function Footer() {
 
   return (
-    <footer className={`${outfit.className}  border-t border-gray-600  h-24`}>
-      <div className=" px-8 mx-auto  bg-gray-700 flex justify-between items-center h-full">
+    <footer className={`${outfit.className}  border-t border-gray-600 bg-gray-700  h-24`}>
+      <div className="bg-gray-700 flex justify-between items-center h-full px-4 mx-auto lg:max-w-[80%] md:items-center md:flex md:px-8">
         <Image src={LogoImg} alt="Logo" />
         <div>
           <p className="text-xl mb-2"> Keep in touch with me</p>

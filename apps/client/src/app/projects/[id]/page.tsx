@@ -70,7 +70,7 @@ export default function ProjectsId() {
           </section>
         </div>
 
-        <div className=" w-full max-w-[67rem]">
+        <div className=" w-full max-w-[67rem] mx-auto">
           <div className="relative">
             <EmblaCarousel slides={SLIDES} options={OPTIONS}/>
           </div>

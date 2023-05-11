@@ -1,8 +1,10 @@
 'use client'
+import { Suspense, useEffect, useState } from 'react'
 import { Outfit, Roboto } from 'next/font/google'
-import { GetProjects } from '../../components/GetProjetcs'
 
-import { useState } from 'react'
+import { GetProjects } from '../../components/GetProjetcs'
+import { api } from '../../services/api'
+import { Loading } from '../../components/Widget/Loading'
 
 
 const outfit = Outfit({
@@ -16,40 +18,47 @@ const roboto = Roboto({
   weight: '400'
 })
 
+interface GetProjectsProps {
+    id: string
+    slug: string
+    title: string
+    thumbnail: string
+    images: [],
+    description: string
+    technologies: [],
+    role: string,
+    timeline: string
+}
+
+
+
+
 
 export default function Projects() {
-
   const [query, setQuery] = useState('all');
+  const [projects, setProjects] = useState<GetProjectsProps[]>([])
+  const [isLoading, setLoading] = useState(false);
 
-  const projects = [
-    {
-      projectId: '1',
-      projectName: 'News',
-      projectDescription: 'exemplo 1',
-      type: 'frontend'
+  useEffect(() => {
 
-    },
-    {
-      projectId: '2',
-      projectName: 'News 2',
-      projectDescription: 'exemplo 2',
-      type: 'backend'
+    async function getProjects() {
+      setLoading(true);
+      const response = await api.get('/projects/')
+      const projects = response.data
+      setProjects(projects);
+      setLoading(false)
+    }
 
-    },
-    {
-      projectId: '3',
-      projectName: 'News 3',
-      projectDescription: 'exemplo 3',
+    getProjects()
+  }, []);
 
-    },
-   
-  ]
+  if(isLoading) return <Loading />
+  if (!projects) return <p> No data</p>
 
-
-
+    
   const results = projects.filter((value) => {
-    if (value.type === query)
-      return value.type
+    if (value.role === query)
+      return value.role
 
     if (query === 'all')
       return value
@@ -75,10 +84,11 @@ export default function Projects() {
           <p onClick={() => setQuery('backend')}>Back End</p>
           <p>Full Stack</p>
         </div>
-
+        
+      
         <div className='grid grid-rows-1 w-11/12 items-center mx-auto sm:justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4'>
-          {results.map(data => (
-              <GetProjects data={data} key={data.projectId} />
+          {projects.map( data  => (
+              <GetProjects data={data} key={data.id}/>
           ))}
 
         </div>
