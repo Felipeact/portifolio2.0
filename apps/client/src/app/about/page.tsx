@@ -163,7 +163,7 @@ export default function About() {
               <tbody>
                 <tr>
                   <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Overall GPA</td>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg "> 95 </td>
+                  <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg "> 93 </td>
                 </tr>
               </tbody>
             </table>

@@ -1,6 +1,7 @@
 import { ArrowLeft } from "phosphor-react";
 import { FormEvent, useState } from "react";
 import { FeedbackType, feedbackTypes } from "..";
+import { api } from "../../../../services/api";
 import { CloseButton } from "../CloseButton";
 
 interface FeedbackContentStepProps {
@@ -16,7 +17,7 @@ export function FeedbackContentStep( { feedbackType, onFeedbackRestartRequested,
   
   const feedbackTypeInfo = feedbackTypes[feedbackType]
 
-  function handleSubmitFeedback( event: FormEvent){
+  async function handleSubmitFeedback( event: FormEvent){
     event.preventDefault()
 
     if ( feedbackTypeInfo.title == 'Email'){
@@ -24,14 +25,8 @@ export function FeedbackContentStep( { feedbackType, onFeedbackRestartRequested,
     }
 
     if ( feedbackTypeInfo.title == 'Feedback'){
-      console.log('i am at Feedback')
+      await api.post('/feedback', { description, name, company})
     }
-
-    console.log({
-      description,
-      name,
-      company
-    })
 
     onFeedbackSent();
   }
@@ -47,11 +42,6 @@ export function FeedbackContentStep( { feedbackType, onFeedbackRestartRequested,
         </button>
 
         <span className="text-xl leading-6 flex items-center gap-2">
-          <img 
-          className="w-6 h-6"
-          // src={feedbackTypeInfo.image.source} 
-          // alt={feedbackTypeInfo.image.alt} 
-          />
           {feedbackTypeInfo.title}
         </span>
 

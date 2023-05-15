@@ -1,11 +1,13 @@
 'use client'
 import Image from 'next/image'
-import { EmblaOptionsType } from 'embla-carousel-react'
-
 import { Outfit, Roboto } from 'next/font/google'
 
-import ExmploImg from '../../../images/slide-3.jpg'
+import { EmblaOptionsType } from 'embla-carousel-react'
+
 import EmblaCarousel from '../../../components/Carousel'
+import { api } from '../../../services/api';
+import { useState, useEffect } from 'react';
+import { Loading } from '../../../components/Widget/Loading'
 
 
 const outfit = Outfit({
@@ -24,8 +26,42 @@ const OPTIONS: EmblaOptionsType = {}
 const SLIDE_COUNT = 10
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
+interface GetProjectsProps {
+  id: string
+  slug: string
+  title: string
+  thumbnail: string
+  images: [],
+  description: string
+  technologies: [],
+  role: string,
+  overview: string
+  timeline: string
+}
 
-export default function ProjectsId() {
+export default function ProjectsId({
+  params: { id },
+}: {
+  params: { id: string };
+}) {
+
+  const [project, setProject] = useState<GetProjectsProps>()
+  const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+
+    async function getProjectById() {
+      setLoading(true);
+      const { data } = await api.get(`projects/${id}`)
+      const result = Object.assign(data)
+      setProject(result);
+      setLoading(false)
+    }
+
+    getProjectById()
+  },[])  
+
+
   return (
     <main className="min-h-screen bg-blur bg-cover bg-no-repeat bg-fixed ">
 
@@ -33,22 +69,22 @@ export default function ProjectsId() {
 
 
         <div>
-          <h1 className={`${outfit.className} text-center font-bold text-5xl pt-20`}>Project name.</h1>
+          <h1 className={`${outfit.className} text-center font-bold text-5xl pt-20`}>{project?.title}</h1>
 
           <section className='flex flex-col items-center'>
             <div className='flex justify-between mt-32 items-center w-[60%] md:w-[25%] '>
               <div className='text-center'>
                 <p className={`${roboto.className} text-xl`}> Time Line</p>
-                <span className={`${roboto.className} text-sm`}>2022 - 2023</span>
+                <span className={`${roboto.className} text-sm`}>{project?.timeline}</span>
               </div>
 
               <div className='text-center'>
                 <p className={`${roboto.className} text-xl`}> Role </p>
-                <span className={`${roboto.className} text-sm`}>Frontend </span>
+                <span className={`${roboto.className} text-sm`}>{project?.role} </span>
               </div>
             </div>
 
-            <Image className='mt-28 h-[400px] md:h-[500px] w-[80%]  md:w-auto rounded-lg' src={ExmploImg} alt='Project Name' />
+            <Image className='mt-28 h-[400px] md:h-[500px] w-[80%]  md:w-auto rounded-lg' width={500} height={500} src={project?.thumbnail} alt='Project Name' />
           </section>
         </div>
 
@@ -58,15 +94,9 @@ export default function ProjectsId() {
           <section className='flex flex-col items-center'>
             <div className='flex justify-between mt-12 items-center w-[85%] md:w-[50%]  '>
               <p className='p-4 text-lg'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam omnis repudiandae similique deserunt, 
-                vero magnam natus iure perspiciatis hic est ipsa obcaecati ducimus reiciendis et nulla sit ex voluptate commodi!
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum nisi sapiente ab, quaerat aut cum architecto repellendus 
-                ucimus omnis provident voluptatibus distinctio! Saepe neque est necessitatibus, sapiente ducimus hic cumque.
+                {project?.overview}
               </p>
             </div>
-
-          
-
           </section>
         </div>
 
@@ -76,6 +106,28 @@ export default function ProjectsId() {
           </div>
         </div>
 
+        <div>
+          <h2 className={`${outfit.className} text-center font-bold text-5xl pt-20`}>Description.</h2>
+
+          <section className='flex flex-col items-center'>
+            <div className='flex justify-between mt-12 items-center w-[85%] md:w-[50%]  '>
+              <p className='p-4 text-lg'>
+                {project?.description}
+              </p>
+            </div>
+          </section>
+        </div>
+{/* 
+        <div>
+          <h2 className={`${outfit.className} text-center font-bold text-5xl pt-20`}>Technologies.</h2>
+
+          <div className="grid grid-rows-3 w-2/4 items-center mx-auto sm:justify-center sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4">
+            { project?.technologies.map( url => (
+              <img src={url}  className="filter grayscale "  key={url}/>
+
+            ))}
+          </div>
+        </div> */}
 
       </div>
     </main>

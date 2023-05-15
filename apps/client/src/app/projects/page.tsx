@@ -87,7 +87,7 @@ export default function Projects() {
         
       
         <div className='grid grid-rows-1 w-11/12 items-center mx-auto sm:justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4'>
-          {projects.map( data  => (
+          {results.map( data  => (
               <GetProjects data={data} key={data.id}/>
           ))}
 

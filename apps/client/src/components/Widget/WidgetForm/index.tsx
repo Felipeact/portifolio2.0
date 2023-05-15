@@ -8,17 +8,9 @@ import { FeedbackSuccessStep } from "./Steps/FeedBackSuccessStep";
 export const feedbackTypes = {
   BUG: {
     title: 'Email',
-    // image: {
-    //   source: bugImageUrl,
-    //   alt: 'Imagem de um inseto'
-    // }
   },
   OTHER: {
     title: 'Feedback',
-    // image: {
-    //   source: thoughtImageUrl,
-    //   alt: 'Imagem de uma nuvem de pensamento'
-    // }
   },
 
 }
