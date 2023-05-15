@@ -121,7 +121,7 @@ export default function ProjectsId({
             </div>
           </section>
         </div>
-{/* 
+
         <div>
           <h2 className={`${outfit.className} text-center font-bold text-5xl pt-20`}>Technologies.</h2>
 
@@ -131,7 +131,7 @@ export default function ProjectsId({
 
             ))}
           </div>
-        </div> */}
+        </div> 
 
       </div>
     </main>
