@@ -30,7 +30,7 @@ interface GetProjectsProps {
   id: string
   slug: string
   title: string
-  thumbnail: string
+  thumbnail: any
   images: [],
   description: string
   technologies: [],
@@ -84,7 +84,11 @@ export default function ProjectsId({
               </div>
             </div>
 
-            <Image className='mt-28 h-[400px] md:h-[500px] w-[80%]  md:w-auto rounded-lg' width={500} height={500} src={project?.thumbnail} alt='Project Name' />
+            <Image className='mt-28 h-[400px] md:h-[500px] w-[80%]  md:w-auto rounded-lg' 
+            width={500} 
+            height={500} 
+            src={project?.thumbnail} 
+            alt='Project Name' />
           </section>
         </div>
 
