@@ -69,7 +69,7 @@ export default function ProjectsId({
 
 
         <div>
-          <h1 className={`${outfit.className} text-center font-bold text-5xl pt-20`}>{project?.title}</h1>
+          <h1 className={`${outfit.className} text-center font-bold text-5xl pt-20`}>{project?.title}.</h1>
 
           <section className='flex flex-col items-center'>
             <div className='flex justify-between mt-32 items-center w-[60%] md:w-[25%] '>
