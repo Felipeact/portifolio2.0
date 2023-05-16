@@ -125,7 +125,7 @@ export default function ProjectsId({
         <div>
           <h2 className={`${outfit.className} text-center font-bold text-5xl pt-20`}>Technologies.</h2>
 
-          <div className="grid grid-rows-3 w-2/4 justify-items-center mx-auto sm:justify-center sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-3 w-2/4 justify-items-center mx-auto sm:justify-center sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4">
             { project?.technologies.map( url => (
               <img src={url} className="filter brightness-0 invert-[1] h-12 mt-12"  key={url}/>
 
