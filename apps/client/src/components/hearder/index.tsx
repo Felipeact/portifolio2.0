@@ -80,12 +80,15 @@ export function Header() {
                   </Link>
                 </li>
                 <li className="text-white">
-                  <Link href="/my-world">
+                  <Link href="#" >
                     my world
                   </Link>
                 </li>
                 <li className="text-white">
-                  <Link href="#" className="p-2 border border-purple-600 rounded-md hover:border-0 hover:bg-purple-600 hover:font-bold">
+                  <Link href='felipe_viana.pdf' 
+                  target="_blank" 
+                  download 
+                  className="p-2 border border-purple-600 rounded-md hover:border-0 hover:bg-purple-600 hover:font-bold">
                     Resume
                   </Link>
                 </li>

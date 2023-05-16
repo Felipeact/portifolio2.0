@@ -33,9 +33,8 @@ const hide = {
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+  const isInView = useInView(ref, { once: false })
 
-  console.log(isInView)
 
   return (
     <main className="min-h-screen bg-blur bg-cover bg-no-repeat bg-fixed md:p-8 ">

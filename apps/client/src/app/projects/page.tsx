@@ -1,10 +1,11 @@
 'use client'
-import { Suspense, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Outfit, Roboto } from 'next/font/google'
 
 import { GetProjects } from '../../components/GetProjetcs'
 import { api } from '../../services/api'
 import Loading from './loading'
+import { GetFeedBack } from '../../components/GetFeedBack'
 
 
 const outfit = Outfit({
@@ -30,6 +31,13 @@ interface GetProjectsProps {
     timeline: string
 }
 
+interface FeedbackProps {
+  id: string
+  name: string
+  company: string
+  description: string
+}
+
 
 
 
@@ -37,6 +45,7 @@ interface GetProjectsProps {
 export default function Projects() {
   const [query, setQuery] = useState('all');
   const [projects, setProjects] = useState<GetProjectsProps[]>([])
+  const [feedback, setFeedback] = useState<FeedbackProps[]>([])
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -49,9 +58,18 @@ export default function Projects() {
       setLoading(false)
     }
 
+    async function getFeedback(){
+      setLoading(true);
+      const response = await api.get('/feedback')
+      const feedback = response.data
+      setFeedback(feedback);
+      setLoading(false)
+    }
+    
     getProjects()
+    getFeedback()
   }, []);
-
+  
   if(isLoading) return <Loading />
   if (!projects) return <p> No data</p>
 
@@ -91,6 +109,15 @@ export default function Projects() {
               <GetProjects data={data} key={data.id}/>
           ))}
 
+        </div>
+
+        <div className="flex flex-col items-center justify-center pb-16">
+          <h1 className={`${outfit.className} text-center font-bold text-5xl mb-12 pt-20`}>Testimonials</h1>
+          {
+            feedback.map( data => (
+              <GetFeedBack data={data} key={data.id}/>
+            ))
+          }
         </div>
       </div>
     </main>
