@@ -6,7 +6,7 @@ interface CarouselProps {
     urls: [],
 }
 
-export function Carousel(  { urls }  : CarouselProps){
+export function Carousel(  { urls }  : string[] ){
     return (
         <div id="default-carousel" className="relative w-full" data-carousel="slide">
     {/* <!-- Carousel wrapper --> */}
