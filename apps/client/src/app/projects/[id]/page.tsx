@@ -24,7 +24,7 @@ interface GetProjectsProps {
   slug: string
   title: string
   thumbnail: any
-  images: any,
+  images: [],
   description: string
   technologies: [],
   role: string,
