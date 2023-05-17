@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { Outfit, Roboto } from 'next/font/google'
 
-import Carousel from '../../../components/Carousel'
+import { Carousel } from '../../../components/Carousel'
 import { api } from '../../../services/api';
 import { useState, useEffect } from 'react';
 import { Loading } from '../../../components/Widget/Loading'
