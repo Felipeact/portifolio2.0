@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 
 
-export function Carousel(  props ){
+export function Carousel(  props : any ){
     console.log(props)
 
     return (
@@ -11,7 +11,7 @@ export function Carousel(  props ){
     {/* <!-- Carousel wrapper --> */}
     <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
          {/* <!-- Item 1 --> */}
-            { props.map( url => (
+            { props.urls.map( url => (
             <div className="hidden duration-700 ease-in-out" data-carousel-item>
                 <Image src={url} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
             </div>
