@@ -85,7 +85,7 @@ export function Header() {
                   </Link>
                 </li>
                 <li className="text-white">
-                  <Link href='felipe_viana.pdf' 
+                  <Link href='https://upload-images-projects.s3.amazonaws.com/Resume-Felipe---Viana+(1).pdf' 
                   target="_blank" 
                   download 
                   className="p-2 border border-purple-600 rounded-md hover:border-0 hover:bg-purple-600 hover:font-bold">
