@@ -2,9 +2,7 @@
 import Image from 'next/image'
 import { Outfit, Roboto } from 'next/font/google'
 
-import { EmblaOptionsType } from 'embla-carousel-react'
-
-import EmblaCarousel from '../../../components/Carousel'
+import Carousel from '../../../components/Carousel'
 import { api } from '../../../services/api';
 import { useState, useEffect } from 'react';
 import { Loading } from '../../../components/Widget/Loading'
@@ -106,7 +104,7 @@ export default function ProjectsId({
 
         <div className=" w-full max-w-[67rem] mx-auto">
           <div className="relative">
-            <EmblaCarousel slides={SLIDES} options={OPTIONS}/>
+            <Carousel data={project?.images}/>
           </div>
         </div>
 
