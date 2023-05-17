@@ -100,7 +100,7 @@ export default function Projects() {
           <p onClick={() => setQuery('all')}>All</p>
           <p onClick={() => setQuery('frontend')} >Front End</p>
           <p onClick={() => setQuery('backend')}>Back End</p>
-          <p>Full Stack</p>
+          <p onClick={() => setQuery('fullstack')}>Full Stack</p>
         </div>
         
       
