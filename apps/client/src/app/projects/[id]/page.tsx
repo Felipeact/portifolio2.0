@@ -99,7 +99,7 @@ export default function ProjectsId({
 
         <div className=" w-full max-w-[67rem] mx-auto">
           <div className="relative">
-            <Carousel data={project?.images}/>
+            <Carousel urls={project?.images}/>
           </div>
         </div>
 
