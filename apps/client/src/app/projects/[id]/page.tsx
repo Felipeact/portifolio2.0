@@ -19,11 +19,6 @@ const roboto = Roboto({
   weight: '400'
 })
 
-
-const OPTIONS: EmblaOptionsType = {}
-const SLIDE_COUNT = 10
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
-
 interface GetProjectsProps {
   id: string
   slug: string
