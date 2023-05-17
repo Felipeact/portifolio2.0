@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 
 interface CarouselProps {
-    urls: [] | any,
+    urls: [],
 }
 
 export function Carousel(  { urls }  : CarouselProps){
