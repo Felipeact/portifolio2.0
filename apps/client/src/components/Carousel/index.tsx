@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 
 
-export function Carousel( urls: [] ) {
+export function Carousel( urls: string[] ) {
 
 
     return (
