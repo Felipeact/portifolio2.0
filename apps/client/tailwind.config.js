@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./node_modules/flowbite-react/**/*.{js,tsx,ts}",
     "./app/**/*.{js,ts,jsx,tsx}", // Note the addition of the `app` directory.
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -53,6 +54,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
-    require('tailwind-scrollbar')
+    require('tailwind-scrollbar'),
+    require("flowbite/plugin")
   ],
 }
