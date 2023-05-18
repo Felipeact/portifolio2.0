@@ -97,7 +97,7 @@ export default function ProjectsId({
         </div>
 
         <div className=" w-full max-w-[67rem] mx-auto">
-          <div className="relative">
+
               <div id="default-carousel" className="relative w-full" data-carousel="slide">
             {/* <!-- Carousel wrapper --> */}
             <       div className="relative h-56 overflow-hidden rounded-lg md:h-96">
@@ -130,7 +130,6 @@ export default function ProjectsId({
                 </span>
             </button>
             </div>
-          </div>
         </div>
 
         <div>
