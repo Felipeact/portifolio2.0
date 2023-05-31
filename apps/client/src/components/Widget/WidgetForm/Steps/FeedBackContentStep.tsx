@@ -51,33 +51,33 @@ export function FeedbackContentStep( { feedbackType, onFeedbackRestartRequested,
 
       <form onSubmit={handleSubmitFeedback} className="my-4 w-full">
         <textarea 
-        className="min-w-[304px] w-full min-h-[112px] text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none scrollbar-thumb-zinc-700 scrollbar-track-transparent scrollbar-thin"
+        className="w-full min-h-[112px] text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none scrollbar-thumb-zinc-700 scrollbar-track-transparent scrollbar-thin"
         placeholder="Feel free to contact me"
         name="description"
         onChange={event => setDescription(event.target.value)}
         />
-        <div className="flex justify-between w-full">
+        <div className="flex flex-row md:flex-col justify-between w-full">
           <input 
           type="text" 
           name="name" 
           id="name" 
           placeholder="Name" 
           onChange={event => setName(event.target.value)}
-          className=" w-40 text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none mr-4"/>
+          className=" w-full sm:w-40 text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none mr-4 mb-4"/>
           <input 
           type="text" 
           name="email" 
           id="email" 
           placeholder="Email" 
           onChange={event => setEmail(event.target.value)}
-          className=" w-40 text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none mr-4"/>
+          className=" w-full sm:w-40 text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none mr-4 mb-4"/>
           <input 
           type="text" 
           name="company" 
           id="company" 
           placeholder="Company" 
           onChange={event => setCompany(event.target.value)}
-          className="w-40 text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none" />
+          className="w-full sm:w-40 text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none mb-4" />
         </div>
         <footer className="flex gap-2 mt-2">
           
