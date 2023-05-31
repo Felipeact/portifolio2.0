@@ -56,7 +56,7 @@ export function FeedbackContentStep( { feedbackType, onFeedbackRestartRequested,
         name="description"
         onChange={event => setDescription(event.target.value)}
         />
-        <div className="flex flex-row md:flex-col justify-between w-full">
+        <div className="flex flex-col md:flex-row justify-between w-full">
           <input 
           type="text" 
           name="name" 
