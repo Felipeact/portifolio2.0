@@ -33,7 +33,7 @@ const hide = {
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: false })
+  const isInView = useInView(ref, { once: true })
 
 
   return (
@@ -99,7 +99,7 @@ export default function About() {
           <div className="md:w-11/12 md:flex md:justify-between mb-8 " ref={ref} style={{
           transform: isInView ? "none" : "translateX(200px)",
           opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+          transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
         }}>
             <motion.div 
             className="cursor-pointer"
@@ -172,7 +172,7 @@ export default function About() {
         <div className="md:w-11/12 md:flex md:justify-between pb-24" ref={ref} style={{
           transform: isInView ? "none" : "translateX(-200px)",
           opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+          transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
         }}>
           <div className="cursor-pointer">
             <h3 className="text-4xl capitalize font-bold mb-2">React JS Developer</h3>
