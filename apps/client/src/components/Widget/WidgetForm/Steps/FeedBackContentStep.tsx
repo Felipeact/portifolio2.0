@@ -14,6 +14,7 @@ export function FeedbackContentStep( { feedbackType, onFeedbackRestartRequested,
   const [description, setDescription ] = useState('')
   const [name, setName ] = useState('')
   const [company, setCompany] = useState('')
+  const [email, setEmail] = useState('')
   
   const feedbackTypeInfo = feedbackTypes[feedbackType]
 
@@ -21,7 +22,7 @@ export function FeedbackContentStep( { feedbackType, onFeedbackRestartRequested,
     event.preventDefault()
 
     if ( feedbackTypeInfo.title == 'Email'){
-      console.log('i am at email')
+      await api.post('/email', { description, name, company, email})
     }
 
     if ( feedbackTypeInfo.title == 'Feedback'){
@@ -62,6 +63,13 @@ export function FeedbackContentStep( { feedbackType, onFeedbackRestartRequested,
           id="name" 
           placeholder="Name" 
           onChange={event => setName(event.target.value)}
+          className=" w-40 text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none mr-4"/>
+          <input 
+          type="text" 
+          name="email" 
+          id="email" 
+          placeholder="Email" 
+          onChange={event => setEmail(event.target.value)}
           className=" w-40 text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none mr-4"/>
           <input 
           type="text" 
