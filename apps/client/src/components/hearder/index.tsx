@@ -79,11 +79,11 @@ export function Header() {
                     projects
                   </Link>
                 </li>
-                <li className="text-white">
+                {/* <li className="text-white">
                   <Link href="#" >
                     my world
                   </Link>
-                </li>
+                </li> */}
                 <li className="text-white">
                   <Link href='https://upload-images-projects.s3.amazonaws.com/Resume-Felipe---Viana+(1).pdf' 
                   target="_blank" 

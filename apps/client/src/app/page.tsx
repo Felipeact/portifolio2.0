@@ -58,62 +58,14 @@ export default function Home() {
         <Image src={StudyingImg} alt="Studying Img" className=' hidden md:block' />
       </div>
 
+      <div>
+          <h2 className={`${outfit.className} text-center font-bold text-5xl pt-20`}>My Technologies.</h2>
 
-      <div className="mx-auto pb-24 xl:max-w-[80%] text-center md:text-left  md:flex md:flex-col  ">
-        <h2 className="text-5xl font-bold mb-8"> My Time Line </h2>
-        <motion.div
-        >
-          <section className="">
-            <h3 className="text-3xl font-bold mb-4">2023</h3>
+          <div className="grid grid-cols-3 w-2/4 justify-items-center mx-auto sm:justify-center sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4 pb-8">
+              <img className="filter brightness-0 invert-[1] h-12 mt-8"/>
 
-            <div className=' mb-4' >
-              <p className=' before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>Started Computer System program at BCIT</p>
-              <p className='text-stone-300 ml-12'> After finished smy react js certification I decided to join a college to improve more my knowledge.</p>
-            </div>
-
-            <div className='mb-4' >
-              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> Dispatcher </p>
-              <p className='text-stone-300 ml-12'> Im working as dispatcher at Diamond Delivery </p>
-            </div>
-
-            <div className='mb-4' >
-              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> My Portifolio </p>
-              <p className='text-stone-300 ml-12'> Started to design my portifolio </p>
-            </div>
-          </section>
-        </motion.div>
-        <motion.div
-          className="mt-4"
-          animate={isVisible ? show : hide}
-        >
-
-          <section>
-            <h3 className="text-3xl font-bold mb-4">2022</h3>
-
-            <div className='mb-4' >
-              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>From Driver to Dispatcher </p>
-              <p className='text-stone-300 ml-12'> I was working as a driver for a company
-                called Diamond Delivery and after 8 I got a offer to work as dispatcher</p>
-            </div>
-
-            <div className='mb-4' >
-              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> Working on front end Projects </p>
-            </div>
-
-            <div className='mb-4' >
-              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>Web Developer Volunteer </p>
-            </div>
-
-          </section>
-
-        </motion.div>
-        <span
-          className="cursor-pointer"
-          onClick={() => setIsVisible(!isVisible)}
-        >
-          {isVisible ? 'close' : ' show more'}
-        </span>
-      </div>
+          </div>
+        </div> 
 
     </main >
   )

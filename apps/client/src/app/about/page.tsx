@@ -92,7 +92,64 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mx-auto w-[80%] lg:max-w-[78%] mt-28">
+      <div className="mx-auto pb-24 xl:max-w-[80%] md:text-left  md:flex md:flex-col mt-14">
+        <h2 className="text-6xl font-bold"> My Time Line </h2>
+        <motion.div
+        >
+          <section className="">
+            <h3 className="text-3xl font-bold mb-4">2023</h3>
+
+            <div className=' mb-4' >
+              <p className=' before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>Started Computer System at BCIT</p>
+              <p className='text-stone-300 ml-12'> After finished my React JS certification I decided to join a college to improve more my knowledge.</p>
+            </div>
+
+            <div className='mb-4' >
+              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> Dispatcher </p>
+              <p className='text-stone-300 ml-12'> Im working as dispatcher at Diamond Delivery </p>
+            </div>
+
+            <div className='mb-4' >
+              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> My Portifolio </p>
+              <p className='text-stone-300 ml-12'> Started to design my portifolio </p>
+            </div>
+          </section>
+        </motion.div>
+        <motion.div
+          className="mt-4"
+          animate={isVisible ? show : hide}
+        >
+
+          <section>
+            <h3 className="text-3xl font-bold mb-4">2022</h3>
+
+            <div className='mb-4' >
+              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>From Driver to Dispatcher </p>
+              <p className='text-stone-300 ml-12'> I was working as a driver for a company
+                called Diamond Delivery and after 8 I got a offer to work as dispatcher</p>
+            </div>
+
+            <div className='mb-4' >
+              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> Working on front end Projects </p>
+            </div>
+
+            <div className='mb-4' >
+              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>Web Developer Volunteer </p>
+            </div>
+
+          </section>
+
+        </motion.div>
+        <span
+          className="cursor-pointer"
+          onClick={() => setIsVisible(!isVisible)}
+        >
+          {isVisible ? 'close' : ' show more'}
+        </span>
+      </div>
+
+
+      <div className="mx-auto w-[80%] lg:max-w-[78%] mt-12">
         <h2 className="text-6xl capitalize font-bold mb-14 ">Education</h2>
 
         <div >
