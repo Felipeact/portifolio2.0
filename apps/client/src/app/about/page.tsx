@@ -96,7 +96,11 @@ export default function About() {
         <h2 className="text-6xl font-bold"> My Time Line </h2>
         <motion.div
         >
-          <section className="">
+          <section className="" ref={ref} style={{
+          transform: isInView ? "none" : "translateX(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+        }}>
             <h3 className="text-3xl font-bold mb-4">2023</h3>
 
             <div className=' mb-4' >
