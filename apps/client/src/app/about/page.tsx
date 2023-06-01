@@ -96,7 +96,7 @@ export default function About() {
         <h2 className="text-6xl font-bold"> My Time Line </h2>
         <motion.div
         >
-          <section className="">
+          <section className="mt-8">
             <h3 className="text-3xl font-bold mb-4">2023</h3>
 
             <div className=' mb-4' >
