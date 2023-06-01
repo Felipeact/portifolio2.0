@@ -92,7 +92,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mx-auto pb-8 xl:max-w-[80%] md:text-left  md:flex md:flex-col mt-14">
+      <div className="mx-auto w-[80%] lg:max-w-[78%] mt-12 md:text-left  md:flex md:flex-col">
         <h2 className="text-6xl font-bold"> My Time Line </h2>
         <motion.div
         >
