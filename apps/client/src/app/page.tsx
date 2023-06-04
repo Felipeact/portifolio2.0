@@ -62,7 +62,7 @@ export default function Home() {
           <h2 className={`${outfit.className} text-center font-bold text-5xl pt-20`}>My Technologies.</h2>
 
           <div className="grid grid-cols-3 w-2/4 justify-items-center mx-auto sm:justify-center sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4 pb-8">
-              <img className="filter brightness-0 invert-[1] h-12 mt-8"/>
+              <img src='https://upload-images-projects.s3.us-east-1.amazonaws.com/b1a7f0a21cec06a11f5dc3f42097feb3-typescript.svg' className="filter brightness-0 h-12 mt-8 invert-[0.6] hover:invert-[1] cursor-pointer"/>
 
           </div>
         </div>

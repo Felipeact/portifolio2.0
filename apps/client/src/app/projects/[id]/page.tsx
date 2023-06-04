@@ -117,7 +117,7 @@ export default function ProjectsId({
 
           <div className="grid grid-cols-3 w-2/4 justify-items-center mx-auto sm:justify-center sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4 pb-8">
             { project?.technologies.map( url => (
-              <img src={url} className="filter brightness-0 invert-[1] h-12 mt-8"  key={url}/>
+              <img src={url} className="filter brightness-0 h-12 mt-8 invert-[0.6] hover:invert-[1] cursor-pointer"  key={url}/>
 
             ))}
           </div>
