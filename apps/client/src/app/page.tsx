@@ -59,9 +59,9 @@ export default function Home() {
       </div>
 
         <div>
-          <h2 className={`${outfit.className} text-center font-bold text-5xl pt-20`}>My Technologies.</h2>
+          <h2 className={`${outfit.className} text-center font-bold text-5xl mb-20`}>My Technologies.</h2>
 
-          <div className="grid grid-cols-3 w-2/4 justify-items-center mx-auto sm:justify-center sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4 pb-8 mb-8">
+          <div className="grid grid-cols-3 w-2/4 justify-items-center mx-auto sm:justify-center sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4 pb-8 ">
               <img src='https://upload-images-projects.s3.us-east-1.amazonaws.com/b1a7f0a21cec06a11f5dc3f42097feb3-typescript.svg' className="filter brightness-0 h-12 mt-8 invert-[0.6] hover:invert-[1] cursor-pointer"/>
               <img src='https://upload-images-projects.s3.amazonaws.com/737d48b4c831ae3ce167b5af094703c8-tailwindcss.svg' className="filter brightness-0 h-12 mt-8 invert-[0.6] hover:invert-[1] cursor-pointer"/>
               <img src='https://upload-images-projects.s3.amazonaws.com/afe3777d886669e33bb6a0a700bc9fce-nodejs-icon.svg' className="filter brightness-0 h-12 mt-8 invert-[0.6] hover:invert-[1] cursor-pointer"/>
