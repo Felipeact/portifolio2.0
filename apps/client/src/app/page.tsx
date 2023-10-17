@@ -19,26 +19,16 @@ const roboto = Roboto({
   weight: '400'
 })
 
-const show = {
-  opacity: 1,
-  display: "block"
-};
-
-const hide = {
-  opacity: 0,
-  transitionEnd: {
-    display: "none"
-  }
-};
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(false);
 
   return (
     <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] bg-blur bg-cover bg-no-repeat bg-fixed px-4 mx-auto  ">
 
       <div className='flex items-center justify-center h-screen'>
 
+        <Image src={StudyingImg} alt="Studying Img" />
+        
         <section className='md:w-3/6'>
           <h1 className={`${outfit.className} text-center md:text-left text-5xl xl:text-7xl font-bold my-12`}>
             I am a
@@ -55,7 +45,7 @@ export default function Home() {
           </h1>
           <p className={` ${roboto.className} text-center md:text-left text-lg mt-16`}>Passionate to help you solve problems , build products or grow an existing project .</p>
         </section>
-        <Image src={StudyingImg} alt="Studying Img" className=' hidden md:block' />
+        
       </div>
 
 {/*         <div>
