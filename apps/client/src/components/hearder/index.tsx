@@ -70,8 +70,13 @@ export function Header() {
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                 <li className="text-white">
-                  <Link href="/about">
-                    about
+                  <Link href="https://www.linkedin.com/in/felipe-viana/">
+                    Linkedin
+                  </Link>
+                </li>
+                <li className="text-white">
+                  <Link href="https://github.com/Felipeact" >
+                    Github
                   </Link>
                 </li>
                 <li className="text-white">
@@ -79,11 +84,7 @@ export function Header() {
                     projects
                   </Link>
                 </li>
-                {/* <li className="text-white">
-                  <Link href="#" >
-                    my world
-                  </Link>
-                </li> */}
+                
                 <li className="text-white">
                   <Link href='https://upload-images-projects.s3.amazonaws.com/Resume-Felipe---Viana+(1).pdf' 
                   target="_blank" 
