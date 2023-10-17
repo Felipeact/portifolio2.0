@@ -58,7 +58,7 @@ export default function Home() {
         <Image src={StudyingImg} alt="Studying Img" className=' hidden md:block' />
       </div>
 
-        <div>
+{/*         <div>
           <h2 className={`${outfit.className} text-center font-bold text-5xl mb-20`}>My Technologies.</h2>
 
           <div className="grid grid-cols-3 w-[90%] md:w-2/4 justify-items-center mx-auto sm:justify-center sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4 pb-8 ">
@@ -73,7 +73,7 @@ export default function Home() {
               <img src='https://upload-images-projects.s3.amazonaws.com/45c0cd42a899239b7bd70506672ee43f-stripe.svg' className="filter brightness-0 h-12 mt-8 invert-[0.6] hover:invert-[1] cursor-pointer"/>
               <img src='https://upload-images-projects.s3.amazonaws.com/9c9b9bce8c9d1a3394c6331366b1a893-kafka.svg' className="filter brightness-0 h-12 mt-8 invert-[0.6] hover:invert-[1] cursor-pointer"/>
           </div>
-        </div>
+        </div> */}
 
     </main >
   )
