@@ -81,7 +81,7 @@ export function Header() {
                 </li>
                 <li className="text-white">
                   <Link href="/projects">
-                    projects
+                    Projects
                   </Link>
                 </li>
                 
