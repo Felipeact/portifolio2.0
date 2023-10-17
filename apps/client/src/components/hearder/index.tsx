@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Link from "next/link";
 import { Outfit } from 'next/font/google';
 import Image from 'next/image';
+import { LinkedinLogo, GithubLogo } from 'phosphor-react';
 
 import LogoImg from '../../../public/logo.png'
 
@@ -71,12 +72,12 @@ export function Header() {
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                 <li className="text-white">
                   <Link href="https://www.linkedin.com/in/felipe-viana/">
-{/*                     <LinkedinLogo size={30} className="hover:text-purple-500"/> */}
+                    <LinkedinLogo size={30} className="hover:text-purple-500"/>
                   </Link>
                 </li>
                 <li className="text-white">
                   <Link href="https://github.com/Felipeact" >
-                    Github
+                    <GithubLogo size={30} className="hover:text-purple-500"/>
                   </Link>
                 </li>
                 <li className="text-white">
