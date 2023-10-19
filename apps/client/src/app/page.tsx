@@ -27,7 +27,17 @@ export default function Home() {
 
       <div className='flex items-center justify-center h-screen'>
 
-        <Image src={StudyingImg} alt="Studying Img" />
+        <div>
+{/*           <div>
+            <h1> Who am I?</h1>
+          </div> */}
+          <Image src={StudyingImg} alt="Studying Img" />
+{/*           <div>
+            <h5> Felipe Viana </h5>
+            <p> Gameplay Programmer </p>
+            <p>https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g</p> */}
+          </div>
+        </div>
         
         <section className='md:w-3/6'>
           <h1 className={`${outfit.className} text-center md:text-left text-5xl xl:text-7xl font-bold my-12`}>
