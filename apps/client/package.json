@@ -37,7 +37,6 @@
     "eslint-config-custom": "*",
     "phosphor-react": "^1.4.1",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7",
-    "react-mdr": "*"
+    "tailwindcss": "^3.2.7"
   }
 }
