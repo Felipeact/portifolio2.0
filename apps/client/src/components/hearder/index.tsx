@@ -31,7 +31,7 @@ export function Header() {
                       typeSpeed={70}
                       deleteSpeed={50}
                       delaySpeed={1000}/>
-                  <div/>
+                  </div>
               
               </Link>
               <div className="md:hidden">
