@@ -35,8 +35,8 @@ export default function Home() {
 {/*           <div>
             <h5> Felipe Viana </h5>
             <p> Gameplay Programmer </p>
-            <p>https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g</p> */}
-          </div>
+            <p>https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g</p>
+          </div> */}
         </div>
         
         <section className='md:w-3/6'>
