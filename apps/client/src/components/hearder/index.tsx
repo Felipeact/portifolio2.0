@@ -23,7 +23,7 @@ export function Header() {
         <div className="justify-between px-4 mx-auto lg:max-w-[80%] md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
-              <Link href="/" className="text-green-500 text-xl font-semibold">
+              <Link href="/" className="text-green-[#32CD32] text-xl font-semibold">
                   F
                    <Typewriter
                       words={['elipe Viana']}
