@@ -1,6 +1,5 @@
 import { Widget } from "../components/Widget";
 import { Header } from "../components/hearder";
-import { Footer } from "../components/footer";
 
 
 export default function Template({ children }: {
@@ -11,7 +10,6 @@ export default function Template({ children }: {
       <Header />
       <Widget />
       {children}
-      <Footer />
     </>
   );
 }
