@@ -24,9 +24,9 @@ export function Header() {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link href="/">
-                <div>  
+                <div className="text-green-600">  
                    <Typewriter
-                     className="text-green-600"
+                     
                       words={['Felipe Viana']}
                       loop={true}
                       typeSpeed={70}
