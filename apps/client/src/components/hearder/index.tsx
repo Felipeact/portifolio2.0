@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Outfit } from 'next/font/google';
 import Image from 'next/image';
 import { LinkedinLogo, GithubLogo } from 'phosphor-react';
+import { Typewriter } from 'react-simple-typewriter'
 
 import LogoImg from '../../../public/logo.png'
 
@@ -23,7 +24,14 @@ export function Header() {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link href="/">
-                <Image src={LogoImg} alt="logo" loading="lazy" />
+               <Typewriter
+
+              words={['Felipe Viana']}
+              loop={5}
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
               </Link>
               <div className="md:hidden">
                 <button
