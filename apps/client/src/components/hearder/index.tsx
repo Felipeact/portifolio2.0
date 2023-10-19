@@ -23,8 +23,8 @@ export function Header() {
         <div className="justify-between px-4 mx-auto lg:max-w-[80%] md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
-              <Link href="/">
-                <div className="text-green-600">  
+              <Link href="/" className="text-green-600">
+                <div>  
                    <Typewriter
                      
                       words={['Felipe Viana']}
