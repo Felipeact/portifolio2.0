@@ -27,7 +27,7 @@ export function Header() {
                 <div>  
                    <Typewriter
                       words={['Felipe Viana']}
-                      loop={5}
+                      loop={true}
                       typeSpeed={70}
                       deleteSpeed={50}
                       delaySpeed={1000}/>
