@@ -26,9 +26,8 @@ export function Header() {
               <Link href="/" className="text-green-600">
                 <div>  
                    <Typewriter
-                     
                       words={['Felipe Viana']}
-                      loop={true}
+                      loop={5}
                       typeSpeed={70}
                       deleteSpeed={50}
                       delaySpeed={1000}/>
