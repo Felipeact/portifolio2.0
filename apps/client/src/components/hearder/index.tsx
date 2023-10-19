@@ -24,14 +24,16 @@ export function Header() {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link href="/">
-               <Typewriter
-
-              words={['Felipe Viana']}
-              loop={5}
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-            />
+                <div>  
+                   <Typewriter
+                     className="text-green-600"
+                      words={['Felipe Viana']}
+                      loop={true}
+                      typeSpeed={70}
+                      deleteSpeed={50}
+                      delaySpeed={1000}/>
+                  <div/>
+              
               </Link>
               <div className="md:hidden">
                 <button
