@@ -2,10 +2,7 @@
 import Image from 'next/image'
 import { Typewriter } from 'react-simple-typewriter'
 
-import StudyingImg from '../images/Studying-amico.svg'
 import { Outfit, Roboto } from 'next/font/google'
-import { motion } from 'framer-motion'
-import { useState } from 'react'
 
 
 const outfit = Outfit({
@@ -28,15 +25,15 @@ export default function Home() {
       <div className='flex items-center justify-center h-screen'>
 
         <div>
-{/*           <div>
+          <div>
             <h1> Who am I?</h1>
-          </div> */}
-          <Image src={StudyingImg} alt="Studying Img" />
-{/*           <div>
+          </div>
+          <Image src="https://avatars.githubusercontent.com/u/45368360?v=4" alt="Studying Img" className="rounded-full border-solid border-2 border-white-500"/>
+          <div>
             <h5> Felipe Viana </h5>
             <p> Gameplay Programmer </p>
             <p>https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g</p>
-          </div> */}
+          </div>
         </div>
         
         <section className='md:w-3/6'>
