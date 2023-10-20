@@ -1,6 +1,8 @@
 'use client'
 import Image from 'next/image'
 import { Typewriter } from 'react-simple-typewriter'
+import Link from "next/link";
+
 
 import { Outfit, Roboto } from 'next/font/google'
 
