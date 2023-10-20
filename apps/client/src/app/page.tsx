@@ -32,7 +32,7 @@ export default function Home() {
           <div className="mt-4">
             <h5> Felipe Viana </h5>
             <p> Gameplay Programmer </p>
-            <p>https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g</p>
+            <p className=""m-10">https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g</p>
           </div>
         </div>
         
