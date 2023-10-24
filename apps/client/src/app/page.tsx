@@ -32,10 +32,10 @@ export default function Home() {
             <h1 className={`${outfit.className} text-center md:text-left text-5xl xl:text-7xl font-bold my-12`}> Who am I?</h1>
           </div>
           <Image src="https://avatars.githubusercontent.com/u/45368360?v=4" alt="Studying Img" className="rounded-full border-solid border-2 border-white-500"/>
-          <div className="mt-4">
+          <div  className={` ${roboto.className} text-center md:text-left text-lg mt-4`}>
             <h5> Felipe Viana </h5>
             <p> Gameplay Programmer </p>
-            <p className={` ${roboto.className} text-center md:text-left text-lg mt-16`}>Passionate to help you solve problems , build products or grow an existing project .</p>
+            <p>Passionate to help you solve problems , build products or grow an existing project .</p>
             <Link className="m-10" href="https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g">My Channel</Link>
           </div>
         </div>
