@@ -2,10 +2,10 @@
 import Image from 'next/image'
 import { Typewriter } from 'react-simple-typewriter'
 import Link from "next/link";
-import Nav from '../components/Nav.tsx'
-import NavItem from '../components/NavItem.tsx'
-import List from '../components/List.tsx'
-import ListItem from '../components/ListItem.tsx'
+import Nav from '../components/Nav'
+import NavItem from '../components/NavItem'
+import List from '../components/List'
+import ListItem from '../components/ListItem'
 
 
 import { Outfit, Roboto } from 'next/font/google'
