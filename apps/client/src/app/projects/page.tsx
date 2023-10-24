@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react'
 import { Outfit, Roboto } from 'next/font/google'
 
-import { GetProjects } from '../../components/GetProjetcs'
 import { api } from '../../services/api'
 import Loading from './loading'
 import { GetFeedBack } from '../../components/GetFeedBack'
