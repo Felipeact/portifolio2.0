@@ -1,4 +1,11 @@
-export default function NavItem({ href, isActive, children } : any ) {
+interface NavItemProps {
+  href: string;
+  isActive: boolean;
+  children: React.ReactNode;
+}
+
+
+export default function NavItem({ href, isActive, children } : NavItemProps ) {
   return (
     <li>
       <a
