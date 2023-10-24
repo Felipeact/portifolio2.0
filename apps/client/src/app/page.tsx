@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] bg-blur bg-cover bg-no-repeat bg-fixed px-4 mx-auto  ">
 
-      <div className='flex items-center justify-center h-screen'>
+      <div className='flex items-center justify-around h-screen'>
 
         <div>
           <div>
@@ -34,25 +34,25 @@ export default function Home() {
           <div className="mt-4">
             <h5> Felipe Viana </h5>
             <p> Gameplay Programmer </p>
+            <p className={` ${roboto.className} text-center md:text-left text-lg mt-16`}>Passionate to help you solve problems , build products or grow an existing project .</p>
             <Link className="m-10" href="https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g">My Channel</Link>
           </div>
         </div>
         
         <section className='md:w-3/6'>
-          <h1 className={`${outfit.className} text-center md:text-left text-5xl xl:text-7xl font-bold my-12`}>
-            I am a
-            <Typewriter
-
-              words={[' Software', ' Front End']}
-              loop={5}
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-            />
-            <br />
-            Developer
-          </h1>
-          <p className={` ${roboto.className} text-center md:text-left text-lg mt-16`}>Passionate to help you solve problems , build products or grow an existing project .</p>
+{/*            <div className="divide-y divide-slate-100">
+            <Nav>
+              <NavItem href="/new" isActive>New Releases</NavItem>
+              <NavItem href="/top">Top Rated</NavItem>
+              <NavItem href="/picks">Vincent’s Picks</NavItem>
+            </Nav>
+            <List>
+              {movies.map((movie) => (
+              <ListItem key={movie.id} movie={movie} />
+              ))}
+            </List>
+          </div> */}
+          
         </section>
         
       </div>
