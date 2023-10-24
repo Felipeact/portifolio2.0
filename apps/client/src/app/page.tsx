@@ -60,7 +60,7 @@ export default function Home( { movies } : MoviesProps) {
               <NavItem href="/picks">Vincent’s Picks</NavItem>
             </Nav>
             <List>
-              {movies.map((movie : any) => (
+              {movies.map((movie) => (
               <ListItem key={movie.id} movie={movie} />
               ))}
             </List>
