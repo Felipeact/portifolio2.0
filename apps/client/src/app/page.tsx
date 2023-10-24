@@ -31,7 +31,7 @@ export default function Home() {
           <div>
             <h1 className={`${outfit.className} text-center md:text-left text-5xl xl:text-7xl font-bold my-12`}> Who am I?</h1>
           </div>
-          <Image src="https://avatars.githubusercontent.com/u/45368360?v=4" alt="Studying Img" className="rounded-full border-solid border-2 border-white-500"/>
+          <Image src="https://avatars.githubusercontent.com/u/45368360?v=4" alt="Studying Img" className="rounded-full w-96 h-96 border-solid border-2 border-white-500"/>
           <div  className={` ${roboto.className} text-center md:text-left text-lg mt-4`}>
             <h5> Felipe Viana </h5>
             <p> Gameplay Programmer </p>
