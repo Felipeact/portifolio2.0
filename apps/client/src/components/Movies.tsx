@@ -13,9 +13,9 @@ export default function Movies({ movies } : any) {
         <NavItem href="/picks">Vincent’s Picks</NavItem>
       </Nav>
       <List>
-        {movies.map(( {movie}: any) => (
+{/*         {movies.map() => (
           <ListItem key={movie.id} movie={movie} />
-        ))}
+        ))} */}
       </List>
     </div>
   );
