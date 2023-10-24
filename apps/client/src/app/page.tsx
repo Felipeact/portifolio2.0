@@ -2,10 +2,7 @@
 import Image from 'next/image'
 import { Typewriter } from 'react-simple-typewriter'
 import Link from "next/link";
-import Nav from '../components/Nav'
-import NavItem from '../components/NavItem'
-import List from '../components/List'
-import ListItem from '../components/ListItem'
+import Movies from '../components/Movies'
 
 
 import { Outfit, Roboto } from 'next/font/google'
@@ -22,13 +19,8 @@ const roboto = Roboto({
   weight: '400'
 })
 
-interface MoviesProps {
-  id: number;
-  movie: [],
-}
 
-
-export default function Home( { movies } : MoviesProps) {
+export default function Home() {
 
   return (
     <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] bg-blur bg-cover bg-no-repeat bg-fixed px-4 mx-auto  ">
@@ -49,18 +41,7 @@ export default function Home( { movies } : MoviesProps) {
         </div>
         
         <section className='md:w-3/6'>
-           <div className="divide-y divide-slate-100">
-            <Nav>
-              <NavItem href="/new" isActive>New Releases</NavItem>
-              <NavItem href="/top">Top Rated</NavItem>
-              <NavItem href="/picks">Vincent’s Picks</NavItem>
-            </Nav>
-            <List>
-              {movies.map((movie) => (
-              <ListItem key={movie.id} movie={movie} />
-              ))}
-            </List>
-          </div>
+           <Movies />
           
         </section>
         
