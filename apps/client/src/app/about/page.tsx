@@ -37,7 +37,7 @@ export default function About() {
 
 
   return (
-    <main className="min-h-screen bg-blur bg-cover bg-no-repeat bg-fixed md:p-8 ">
+    <main className="min-h-screen md:p-8 ">
 
       <div className="mx-auto w-full lg:max-w-[78%] md:flex md:justify-center items-center mb-8">
         <div className="flex flex-col items-center justify-center md:items-start  z">
