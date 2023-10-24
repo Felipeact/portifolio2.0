@@ -22,17 +22,22 @@ const roboto = Roboto({
   weight: '400'
 })
 
-interface Movie {
-  id: number;
-  // Add more properties if needed
-}
-
 interface MoviesProps {
-  movies: Movie[];
+  id: number;
+  movie: {
+    image: string;
+    title: string;
+    starRating: number;
+    rating: string;
+    year: number;
+    genre: string;
+    runtime: string;
+    cast: string;
+  };
 }
 
 
-export default function Home( { movies } : any) {
+export default function Home( { movies } : MoviesProps) {
 
   return (
     <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] bg-blur bg-cover bg-no-repeat bg-fixed px-4 mx-auto  ">
