@@ -12,7 +12,7 @@ interface MoviesProps {
   movies: Movie[];
 }
 
-export function Movies({ movies } : MoviesProps) {
+export default function Movies({ movies } : MoviesProps) {
   return (
     <div className="divide-y divide-slate-100">
       <Nav>
