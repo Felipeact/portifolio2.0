@@ -9,7 +9,7 @@ const outfit = Outfit({
 
 export default function Loading() {
     return (
-        <main className="min-h-screen bg-blur bg-cover bg-no-repeat bg-fixed ">
+        <main className="min-h-screen">
 
             <div className="mx-auto lg:max-w-[78%]">
 
