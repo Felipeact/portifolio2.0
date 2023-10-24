@@ -1,6 +1,6 @@
 interface NavItemProps {
   href: string;
-  isActive: boolean;
+  isActive?: boolean;
   children: React.ReactNode;
 }
 
