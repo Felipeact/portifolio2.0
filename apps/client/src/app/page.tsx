@@ -32,9 +32,7 @@ export default function Home() {
             <h1 className={`${outfit.className} text-center md:text-left text-5xl xl:text-7xl font-bold my-12`}> Who am I?</h1>
           </div>
           <div className="max-w-full mx-auto rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-            <div className="md:shrink-0">
               <Image src="https://avatars.githubusercontent.com/u/45368360?v=4" alt="Studying Img" className="h-48 w-full object-cover md:h-full md:w-48 border-solid border-2 border-white-500"/>
-            </div>
           </div>
           
           <div  className={` ${roboto.className} text-center md:text-left text-lg mt-4`}>
