@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 interface ListProps {
   children: ReactNode;
 }
