@@ -37,7 +37,7 @@ export default function Home() {
             <p> Gameplay Programmer </p>
             <p>Passionate to help you solve problems , build products or grow an existing project .</p>
           </div>
-            <Link className="m-10" href="https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g">My Channel</Link>
+            <Link className="mt-10" href="https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g">My Channel</Link>
         </div>
         
         <section className='md:w-3/6'>
