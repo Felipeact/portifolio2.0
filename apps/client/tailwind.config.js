@@ -11,9 +11,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        blur: "url('/blur.png')"
-      },
+      // backgroundImage: {
+      //   blur: "url('/blur.png')"
+      // },
       borderRadius: {
         md: '4px'
       },
