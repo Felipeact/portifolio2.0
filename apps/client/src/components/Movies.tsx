@@ -9,7 +9,7 @@ interface Movie {
 }
 
 interface MoviesProps {
-  movies: Movie[];
+  movies?: Movie[];
 }
 
 export default function Movies({ movies } : MoviesProps) {
