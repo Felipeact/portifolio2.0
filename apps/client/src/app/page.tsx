@@ -23,7 +23,7 @@ const roboto = Roboto({
 export default function Home() {
 
   return (
-    <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] bg-blur bg-cover bg-no-repeat bg-fixed px-4 mx-auto  ">
+    <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] px-4 mx-auto  ">
 
       <div className='flex items-center justify-around h-screen'>
 
