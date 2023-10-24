@@ -3,16 +3,8 @@ import NavItem from './NavItem';
 import List from './List';
 import ListItem from './ListItem';
 
-interface Movie {
-  id: number;
-  // Add more properties if needed
-}
 
-interface MoviesProps {
-  movies?: Movie[];
-}
-
-export default function Movies({ movies } : MoviesProps) {
+export default function Movies({ movies } : any) {
   return (
     <div className="divide-y divide-slate-100">
       <Nav>
@@ -21,7 +13,7 @@ export default function Movies({ movies } : MoviesProps) {
         <NavItem href="/picks">Vincent’s Picks</NavItem>
       </Nav>
       <List>
-        {movies.map((movie) => (
+        {movies.map(( {movie}: any) => (
           <ListItem key={movie.id} movie={movie} />
         ))}
       </List>
