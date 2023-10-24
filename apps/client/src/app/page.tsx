@@ -36,8 +36,8 @@ export default function Home() {
             <h5> Felipe Viana </h5>
             <p> Gameplay Programmer </p>
             <p>Passionate to help you solve problems , build products or grow an existing project .</p>
-            <Link className="m-10" href="https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g">My Channel</Link>
           </div>
+            <Link className="m-10" href="https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g">My Channel</Link>
         </div>
         
         <section className='md:w-3/6'>
