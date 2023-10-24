@@ -1,4 +1,17 @@
-export default function ListItem({ movie } : any ) {
+interface ListItemProps {
+  movie: {
+    image: string;
+    title: string;
+    starRating: number;
+    rating: string;
+    year: number;
+    genre: string;
+    runtime: string;
+    cast: string;
+  };
+}
+
+export default function ListItem({ movie } : ListItemProps ) {
   return (
     <article className="flex items-start space-x-6 p-6">
       <img src={movie.image} alt="" width="60" height="88" className="flex-none rounded-md bg-slate-100" />
