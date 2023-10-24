@@ -2,6 +2,10 @@
 import Image from 'next/image'
 import { Typewriter } from 'react-simple-typewriter'
 import Link from "next/link";
+import Nav from './components/Nav.tsx'
+import NavItem from './components/NavItem.tsx'
+import List from './components/List.tsx'
+import ListItem from './components/ListItem.tsx'
 
 
 import { Outfit, Roboto } from 'next/font/google'
@@ -19,7 +23,7 @@ const roboto = Roboto({
 })
 
 
-export default function Home() {
+export default function Home( { movies } : any) {
 
   return (
     <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] bg-blur bg-cover bg-no-repeat bg-fixed px-4 mx-auto  ">
@@ -40,7 +44,7 @@ export default function Home() {
         </div>
         
         <section className='md:w-3/6'>
-{/*            <div className="divide-y divide-slate-100">
+           <div className="divide-y divide-slate-100">
             <Nav>
               <NavItem href="/new" isActive>New Releases</NavItem>
               <NavItem href="/top">Top Rated</NavItem>
@@ -51,7 +55,7 @@ export default function Home() {
               <ListItem key={movie.id} movie={movie} />
               ))}
             </List>
-          </div> */}
+          </div>
           
         </section>
         
