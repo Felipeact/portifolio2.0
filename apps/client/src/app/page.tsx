@@ -1,10 +1,9 @@
 'use client'
 import Image from 'next/image'
-import { Typewriter } from 'react-simple-typewriter'
 import Link from "next/link";
 import Movies from '../components/Movies'
 
-
+import ImageMy from "../../public/blur.png"
 import { Outfit, Roboto } from 'next/font/google'
 
 
@@ -23,29 +22,27 @@ const roboto = Roboto({
 export default function Home() {
 
   return (
-    <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] px-4 mx-auto  ">
+    <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] px-4 mx-auto ">
 
-      <div className='flex items-center justify-around h-screen'>
-
+      <div className=' flex lg:flex-row flex-col items-center justify-between mx-auto p-8'>
         <div>
           <div>
-            <h1 className={`${outfit.className} text-center md:text-left text-5xl xl:text-7xl font-bold my-12`}> Who am I?</h1>
+            <h1 className={`${outfit.className} text-center lg:text-left text-5xl xl:text-7xl font-bold my-12`}> Who am I?</h1>
           </div>
-          <div className="w-full h-96 mx-auto rounded-xl shadow-md overflow-hidden  border-solid border-2 border-white-500 ">
-              <Image src="https://avatars.githubusercontent.com/u/45368360?v=4" alt="Studying Img" className="h-48 w-full object-cover md:h-full"/>
+          <div className="w-96 h-96 mx-auto rounded-full shadow-md overflow-hidden  border-solid border-2 border-white-500 ">
+              <Image src={ImageMy} width={0} height={0} alt="Studying Img" className="h-48 w-full object-cover h-full"/>
           </div>
           
-          <div  className={` ${roboto.className} text-center md:text-left text-lg mt-4`}>
+          <div  className={` ${roboto.className} text-center lg:text-left text-lg mt-4`}>
             <h5> Felipe Viana </h5>
             <p> Gameplay Programmer </p>
             <p>Passionate to help you solve problems , build products or grow an existing project .</p>
           </div>
-            <Link className="mt-10" href="https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g">My Channel</Link>
+            <Link className="mt-10 mb-10 flex justify-center" href="https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g">My Channel</Link>
         </div>
         
-        <section className='md:w-3/6'>
+        <section className='md:w-3/6 p-4'>
            <Movies />
-          
         </section>
         
       </div>
