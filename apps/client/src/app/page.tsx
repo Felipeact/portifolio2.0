@@ -41,10 +41,7 @@ export default function Home() {
             <Link className="mt-10 mb-10 flex justify-center" href="https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g">My Channel</Link>
         </div>
         
-        <div className='lg:w-3/6 lg:p-4'>
-           <Movies />
-        </div>
-        
+        <Movies />
       </div>
 
 {/*         <div>
