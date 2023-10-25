@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from "next/link";
-import Movies from '../components/Movies'
+import Movies from '../components/videos'
 
 import ImageMy from "../../public/blur.png"
 import { Outfit, Roboto } from 'next/font/google'
@@ -22,7 +22,7 @@ const roboto = Roboto({
 export default function Home() {
 
   return (
-    <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] px-4 mx-auto ">
+    <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] mx-auto ">
 
       <div className=' flex lg:flex-row flex-col items-center justify-between mx-auto p-8'>
         <div>
@@ -41,9 +41,9 @@ export default function Home() {
             <Link className="mt-10 mb-10 flex justify-center" href="https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g">My Channel</Link>
         </div>
         
-        <section className='md:w-3/6 p-4'>
+        <div className='lg:w-3/6 lg:p-4'>
            <Movies />
-        </section>
+        </div>
         
       </div>
 
