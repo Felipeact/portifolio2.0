@@ -6,7 +6,7 @@ interface ListProps {
 
 export default function List({ children } : ListProps ) {
   return (
-    <ul className="divide-y divide-slate-100">
+    <ul className="divide-y divide-slate-100 h-full overflow-y-scroll">
       {children}
     </ul>
   )
