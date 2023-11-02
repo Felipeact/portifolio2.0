@@ -25,7 +25,7 @@ export default function Home() {
     <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] mx-auto ">
 
       <div className=' flex lg:flex-row flex-col items-center justify-between mx-auto p-8'>
-        <div>
+        <div className="p-4">
           <div>
             <h1 className={`${outfit.className} text-center lg:text-left text-5xl xl:text-7xl font-bold my-12`}> Who am I?</h1>
           </div>
