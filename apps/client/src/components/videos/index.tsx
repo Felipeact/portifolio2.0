@@ -86,7 +86,7 @@ const movies = [
 
 export default function Videos() {
   return (
-    <div className="divide-y divide-slate-100">
+    <div className="h-[70vh] divide-y divide-slate-100 overflow-hidden">
       <Nav>
         <NavItem href="/new" isActive>New Releases</NavItem>
         <NavItem href="/top">Top Rated</NavItem>
