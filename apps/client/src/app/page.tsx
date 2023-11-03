@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from "next/link";
 import Movies from '../components/videos'
 
-import ImageMy from "../../public/blur.png"
+import MyPhoto from "../../public/myphoto.jpg"
 import { Outfit, Roboto } from 'next/font/google'
 
 
@@ -30,7 +30,7 @@ export default function Home() {
             <h1 className={`${outfit.className} text-center lg:text-left text-5xl xl:text-7xl font-bold my-12`}> Who am I?</h1>
           </div>
           <div className="w-96 h-96 mx-auto rounded-full shadow-md overflow-hidden  border-solid border-2 border-white-500 ">
-              <Image src={ImageMy} width={0} height={0} alt="Studying Img" className="h-48 w-full object-cover h-full"/>
+              <Image src={MyPhoto} width={0} height={0} alt="Studying Img" className="h-48 w-full object-cover h-full"/>
           </div>
           
           <div  className={` ${roboto.className} text-center lg:text-left text-lg mt-4`}>
