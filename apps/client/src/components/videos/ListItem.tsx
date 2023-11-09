@@ -28,7 +28,7 @@ export default function ListItem({ video } : ListItemProps ) {
         width="100" 
         height="100" 
         />
-      <div className="min-w-0 relative flex-auto mt-8">
+      <div className="min-w-0 relative flex-auto mt-8 w-[85%]">
         <h2 className="font-semibold text-purple-500 truncate pr-20">{video.snippet.title}</h2>
         <dl className="mt-2 flex flex-wrap text-sm leading-6 font-medium">
           <div className="absolute top-0 right-0 flex items-center space-x-1">
@@ -44,7 +44,7 @@ export default function ListItem({ video } : ListItemProps ) {
             <dt className="sr-only">Rating</dt>
             {/* <dd className="px-1.5 ring-1 ring-slate-200 rounded">{movie.rating}</dd> */}
           </div>
-          <div className="ml-2">
+          <div>
             <dt className="sr-only">Year</dt>
             <dd>{video.snippet.publishedAt}</dd>
           </div>
