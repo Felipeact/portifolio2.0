@@ -19,6 +19,9 @@ interface ListItemProps {
 
 
 export default function ListItem({ video } : ListItemProps ) {
+
+  const date = new Date(video.snippet.publishedAt);
+  const  formattedDate = date.toDateString()
   return (
     <div className="flex flex-col lg:flex-row items-center space-x-6 p-6 ">
         <ReactPlayer url={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`} 
@@ -46,7 +49,7 @@ export default function ListItem({ video } : ListItemProps ) {
           </div>
           <div>
             <dt className="sr-only">Year</dt>
-            <dd>{video.snippet.publishedAt.toDateString()}</dd>
+            <dd>{formattedDate}</dd>
           </div>
           <div>
             <dt className="sr-only">Genre</dt>
