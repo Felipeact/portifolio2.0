@@ -54,7 +54,7 @@ export default function ListItem({ video } : ListItemProps ) {
               <svg width="2" height="2" fill="currentColor" className="mx-2 text-slate-300" aria-hidden="true">
                 <circle cx="1" cy="1" r="1" />
               </svg>
-              {/* {movie.genre} */}
+              Game
             </dd>
           </div>
           <div>
