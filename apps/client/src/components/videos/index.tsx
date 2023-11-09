@@ -12,7 +12,7 @@ export default function Videos( {data} : VideosProps) {
 
   
   return (
-    <div className="h-fit divide-y divide-slate-100 overflow-hidden">
+    <div className="h-[85vh] divide-y divide-slate-100 overflow-hidden pb-4rem">
       <Nav>
         <NavItem href="/new" isActive>New Releases</NavItem>
         <NavItem href="/top">Top Rated</NavItem>
