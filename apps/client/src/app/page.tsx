@@ -5,6 +5,8 @@ import Movies from '../components/videos'
 
 import MyPhoto from "../../public/myphoto.jpg"
 import { Outfit, Roboto } from 'next/font/google'
+import { useState, useEffect } from 'react';
+import { youtubeApi } from '../services/youtubeApi';
 
 
 const outfit = Outfit({
@@ -18,8 +20,36 @@ const roboto = Roboto({
   weight: '400'
 })
 
+export interface videosProps {
+  id: string
+  snippet: {
+    title: string,
+    publishedAt: string,
+    videoOwnerChannelTitle: string,
+    resourceId: {
+      videoId: string
+    }
+  }
+
+}
 
 export default function Home() {
+
+  const [videos, setVideos] = useState<videosProps[]>([]);
+    
+    useEffect( () => { 
+        async function fetchData() {
+            try {
+              const res = await youtubeApi.get(`playlistItems?part=snippet&playlistId=PL6N9OJFlyLL3GRwaMecUht1zghKqonAEQ&key=AIzaSyCqsrqtdjfs14LSFzgGP5rbzMMFFZyR7Xs`);
+              const { items } = res.data 
+              setVideos(items);
+            } catch (err) {
+                console.log(err);
+            }
+        }
+        fetchData();
+    }, []);
+
 
   return (
     <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] mx-auto ">
@@ -41,7 +71,7 @@ export default function Home() {
             <Link className="mt-10 mb-10 flex justify-center" href="https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g">My Channel</Link>
         </div>
         
-        <Movies />
+        <Movies data={videos}/>
       </div>
 
 {/*         <div>

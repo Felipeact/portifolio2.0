@@ -2,6 +2,7 @@ import Nav from './Nav';
 import NavItem from './NavItem';
 import List from './List';
 import ListItem from './ListItem';
+import { videosProps } from '../../app/page';
 
 
 const movies = [
@@ -84,7 +85,13 @@ const movies = [
   },
 ]
 
-export default function Videos() {
+interface VideosProps {
+  data: videosProps[];
+}
+
+export default function Videos( {data} : VideosProps) {
+
+  
   return (
     <div className="h-[70vh] divide-y divide-slate-100 overflow-hidden">
       <Nav>
@@ -93,8 +100,8 @@ export default function Videos() {
         <NavItem href="/picks">Vincent’s Picks</NavItem>
       </Nav>
       <List>
-        {movies.map((movie) => (
-          <ListItem key={movie.id} movie={movie} />
+        {data.map((data) => (
+          <ListItem key={data.id} video={data} />
         ))}
       </List>
     </div>
