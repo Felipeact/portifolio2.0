@@ -46,7 +46,7 @@ export default function ListItem({ video } : ListItemProps ) {
           </div>
           <div>
             <dt className="sr-only">Year</dt>
-            <dd>{video.snippet.publishedAt}</dd>
+            <dd>{video.snippet.publishedAt.toDateString()}</dd>
           </div>
           <div>
             <dt className="sr-only">Genre</dt>
