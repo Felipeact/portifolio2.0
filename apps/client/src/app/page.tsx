@@ -52,7 +52,7 @@ export default function Home() {
 
 
   return (
-    <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] mx-auto ">
+    <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] mx-auto lg:max-w-[90%] ">
 
       <div className=' flex lg:flex-row flex-col items-center justify-between mx-auto p-8'>
         <div className="p-4">
