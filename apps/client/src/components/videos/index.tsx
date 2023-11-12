@@ -14,9 +14,9 @@ export default function Videos( {data} : VideosProps) {
   return (
     <div className="h-[85vh] divide-y divide-slate-100 overflow-hidden pb-16">
       <Nav>
-        <NavItem href="/new" isActive>New Releases</NavItem>
-        <NavItem href="/top">Top Rated</NavItem>
-        <NavItem href="/picks">Vincent’s Picks</NavItem>
+        <NavItem href="/new" isActive>Videos</NavItem>
+        <NavItem href="/top">Playlist</NavItem>
+        <NavItem href="/picks">Tutorials</NavItem>
       </Nav>
       <List>
         {data.map((data) => (

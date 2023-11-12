@@ -23,7 +23,7 @@ export default function ListItem({ video } : ListItemProps ) {
   const date = new Date(video.snippet.publishedAt);
   const  formattedDate = date.toDateString()
   return (
-    <div className="flex flex-col lg:flex-row items-center space-x-6 p-6 ">
+    <div className="flex flex-col lg:flex-row items-center space-x-6 p-6 last:pb-16 ">
         <ReactPlayer url={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`} 
         className="flex-none rounded-md bg-slate-100 " 
         loop={true} 
