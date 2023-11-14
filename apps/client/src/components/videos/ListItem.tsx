@@ -30,6 +30,7 @@ export default function ListItem({ video } : ListItemProps ) {
         playing
         width="100" 
         height="100" 
+        volume={0}
         />
       <div className="min-w-0 relative flex-auto mt-8 w-[85%]">
         <h2 className="font-semibold text-purple-500 truncate pr-20">{video.snippet.title}</h2>
