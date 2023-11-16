@@ -78,12 +78,12 @@ export function Header() {
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                 <li className="text-white">
-                  <Link href="https://www.linkedin.com/in/felipe-viana/">
+                  <Link href="https://www.linkedin.com/in/felipe-viana/" target="_blank">
                     <LinkedinLogo size={30} className="hover:text-purple-500"/>
                   </Link>
                 </li>
                 <li className="text-white">
-                  <Link href="https://github.com/Felipeact" >
+                  <Link href="https://github.com/Felipeact" target="_blank" >
                     <GithubLogo size={30} className="hover:text-purple-500"/>
                   </Link>
                 </li>
