@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import Link from 'next/link';
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 
@@ -33,7 +34,9 @@ export default function ListItem({ video } : ListItemProps ) {
         volume={0}
         />
       <div className="min-w-0 relative flex-auto mt-8 w-[85%]">
-        <h2 className="font-semibold text-purple-500 truncate pr-20">{video.snippet.title}</h2>
+        <Link href={`/projects/${video.id}`}>
+          <h2 className="font-semibold text-purple-500 truncate pr-20">{video.snippet.title}</h2>
+        </Link>
         <dl className="mt-2 flex flex-wrap text-sm leading-6 font-medium">
           <div className="absolute top-0 right-0 flex items-center space-x-1">
             <dt className="text-sky-500">
