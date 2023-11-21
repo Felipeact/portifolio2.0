@@ -18,7 +18,7 @@ export function Header() {
   const [navbar, setNavbar] = useState(false);
 
   return(
-    <header className={`${outfit.className} w-full bg-gray-700 border-b border-gray-600`}>
+    <header className={`${outfit.className} w-full bg-gray-700 border-b border-gray-600 fixed`}>
       <nav className="w-full">
         <div className="justify-between px-4 mx-auto lg:max-w-[80%] md:items-center md:flex md:px-8">
           <div>
