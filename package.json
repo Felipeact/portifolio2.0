@@ -22,6 +22,8 @@
   "packageManager": "npm@9.5.1",
   "dependencies": {
     "@vercel/analytics": "^1.0.1",
-    "react-player": "^2.13.0"
+    "framer-motion-3d": "^10.16.5",
+    "react-player": "^2.13.0",
+    "react-use-measure": "^2.1.1"
   }
 }

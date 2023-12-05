@@ -19,22 +19,22 @@ interface ListItemProps {
 
 
 
-export default function ListItem({ video } : ListItemProps ) {
+export default function ListItem({ video }: ListItemProps) {
 
   const date = new Date(video.snippet.publishedAt);
-  const  formattedDate = date.toDateString()
+  const formattedDate = date.toDateString()
   return (
     <div className="flex flex-col lg:flex-row items-center space-x-6 p-6 last:pb-16 ">
-        <ReactPlayer url={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`} 
-        className="flex-none rounded-md bg-slate-100 " 
-        loop={true} 
+      <ReactPlayer url={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
+        className="flex-none rounded-md bg-slate-100 "
+        loop={true}
         playing
-        width="100" 
-        height="100" 
+        width="100"
+        height="100"
         volume={0}
-        />
+      />
       <div className="min-w-0 relative flex-auto mt-8 w-[85%]">
-        <Link href={`/projects/${video.id}`}>
+        <Link href={`/projects/${video.snippet.resourceId.videoId}`}>
           <h2 className="font-semibold text-purple-500 truncate pr-20">{video.snippet.title}</h2>
         </Link>
         <dl className="mt-2 flex flex-wrap text-sm leading-6 font-medium">

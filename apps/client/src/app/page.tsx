@@ -7,6 +7,7 @@ import MyPhoto from "../../public/myphoto.jpg"
 import { Outfit, Roboto } from 'next/font/google'
 import { useState, useEffect } from 'react';
 import { youtubeApi } from '../services/youtubeApi';
+import Button3D from '../components/Button3D';
 
 
 const outfit = Outfit({
@@ -41,6 +42,7 @@ export default function Home() {
         async function fetchData() {
             try {
               const res = await youtubeApi.get(`playlistItems?part=snippet&playlistId=PL6N9OJFlyLL3GRwaMecUht1zghKqonAEQ&key=AIzaSyCqsrqtdjfs14LSFzgGP5rbzMMFFZyR7Xs`);
+              // const res = await youtubeApi.get(`search?part=snippet&forMine=true&maxResults=25&type=video&key=AIzaSyCqsrqtdjfs14LSFzgGP5rbzMMFFZyR7Xs`);
               const { items } = res.data 
               setVideos(items);
             } catch (err) {
@@ -68,7 +70,9 @@ export default function Home() {
             <p> Gameplay Programmer </p>
             <p>Passionate to help you solve problems , build products or grow an existing project .</p>
           </div>
-            <Link className="mt-10 mb-10 flex justify-center" href="https://www.youtube.com/channel/UCMYDSj6uAmnq4C_WvVF9C7g">My Channel</Link>
+            
+
+            <Button3D />
         </div>
         
         <Movies data={videos}/>

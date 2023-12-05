@@ -5,6 +5,8 @@ import { Outfit, Roboto } from 'next/font/google'
 import { api } from '../../../services/api';
 import { useState, useEffect } from 'react';
 import { Loading } from '../../../components/Widget/Loading'
+import { youtubeApi } from '../../../services/youtubeApi';
+import ReactPlayer from 'react-player';
 
 
 const outfit = Outfit({
@@ -44,7 +46,7 @@ export default function ProjectsId({
 
     async function getProjectById() {
       setLoading(true);
-      const { data } = await api.get(`projects/${id}`)
+      const { data } = await youtubeApi.get(`videos?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=AIzaSyCqsrqtdjfs14LSFzgGP5rbzMMFFZyR7Xs`)
       const result = Object.assign(data)
       setProject(result);
       setLoading(false)
@@ -57,11 +59,13 @@ export default function ProjectsId({
   return (
     <main className="min-h-screen ">
 
+      
       <div className="mx-auto lg:max-w-[78%]">
 
 
         <div>
           <h1 className={`${outfit.className} text-center font-bold text-5xl pt-20`}>{project?.title}.</h1>
+            
 
           <section className='flex flex-col items-center'>
             <div className='flex justify-between mt-32 items-center w-[60%] md:w-[25%] '>
@@ -112,17 +116,7 @@ export default function ProjectsId({
           </section>
         </div>
 
-        <div>
-          <h2 className={`${outfit.className} text-center font-bold text-5xl pt-20`}>Technologies.</h2>
-
-          <div className="grid grid-cols-3 w-2/4 justify-items-center mx-auto sm:justify-center sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4 pb-8">
-            { project?.technologies.map( url => (
-              <img src={url} className="filter brightness-0 h-12 mt-8 invert-[0.6] hover:invert-[1] cursor-pointer"  key={url}/>
-
-            ))}
-          </div>
-        </div> 
-
+       
       </div>
     </main>
   )
