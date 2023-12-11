@@ -54,10 +54,10 @@ export default function Home() {
 
 
   return (
-    <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] mx-auto lg:max-w-[90%] ">
+    <main className="min-h-screen md:min-h-[calc(100vh_-_5rem)] mx-auto lg:max-w-[90%] md:overflow-hidden ">
 
-      <div className=' flex lg:flex-row flex-col items-center justify-between mx-auto p-8 md:mt-[4rem]'>
-        <div className="p-4">
+      <div className=' flex lg:flex-row flex-col items-center justify-between mx-auto p-8 '>
+        <div className="p-4 md:mt-[4rem]">
           <div>
             <h1 className={`${outfit.className} text-center text-5xl xl:text-7xl font-bold my-12`}> Who am I?</h1>
           </div>
