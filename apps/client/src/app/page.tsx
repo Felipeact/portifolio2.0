@@ -59,7 +59,7 @@ export default function Home() {
       <div className=' flex lg:flex-row flex-col items-center justify-between mx-auto p-8'>
         <div className="p-4">
           <div>
-            <h1 className={`${outfit.className} text-center lg:text-left text-5xl xl:text-7xl font-bold my-12`}> Who am I?</h1>
+            <h1 className={`${outfit.className} text-center text-5xl xl:text-7xl font-bold my-12`}> Who am I?</h1>
           </div>
           <div className="w-96 h-96 mx-auto rounded-full shadow-md overflow-hidden  border-solid border-2 border-white-500 ">
               <Image src={MyPhoto} width={0} height={0} alt="Studying Img" className=" w-full object-cover h-auto"/>
