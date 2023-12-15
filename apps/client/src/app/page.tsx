@@ -1,6 +1,5 @@
 'use client'
 import Image from 'next/image'
-import Link from "next/link";
 import Movies from '../components/videos'
 
 import MyPhoto from "../../public/myphoto.jpg"
@@ -21,36 +20,10 @@ const roboto = Roboto({
   weight: '400'
 })
 
-export interface videosProps {
-  id: string
-  snippet: {
-    title: string,
-    publishedAt: string,
-    videoOwnerChannelTitle: string,
-    resourceId: {
-      videoId: string
-    }
-  }
-
-}
 
 export default function Home() {
 
-  const [videos, setVideos] = useState<videosProps[]>([]);
-    
-    useEffect( () => { 
-        async function fetchData() {
-            try {
-              const res = await youtubeApi.get(`playlistItems?part=snippet&playlistId=PL6N9OJFlyLL3GRwaMecUht1zghKqonAEQ&key=AIzaSyCqsrqtdjfs14LSFzgGP5rbzMMFFZyR7Xs`);
-              // const res = await youtubeApi.get(`search?part=snippet&forMine=true&maxResults=25&type=video&key=AIzaSyCqsrqtdjfs14LSFzgGP5rbzMMFFZyR7Xs`);
-              const { items } = res.data 
-              setVideos(items);
-            } catch (err) {
-                console.log(err);
-            }
-        }
-        fetchData();
-    }, []);
+  
 
 
   return (
@@ -75,7 +48,7 @@ export default function Home() {
             <Button3D />
         </div>
         
-        <Movies data={videos}/>
+        <Movies />
       </div>
 
 {/*         <div>

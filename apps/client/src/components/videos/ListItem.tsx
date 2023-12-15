@@ -5,7 +5,10 @@ const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 interface ListItemProps {
   video: {
-    id: string
+    id: {
+      id:string,
+      videoId: string
+    }
     snippet: {
       title: string,
       publishedAt: string,
@@ -25,7 +28,7 @@ export default function ListItem({ video }: ListItemProps) {
   const formattedDate = date.toDateString()
   return (
     <div className="flex flex-col lg:flex-row items-center space-x-6 p-6 last:pb-16 ">
-      <ReactPlayer url={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
+      <ReactPlayer url={`https://www.youtube.com/watch?v=${video.id.videoId}`}
         className="flex-none rounded-md bg-slate-100 "
         loop={true}
         playing
@@ -34,7 +37,7 @@ export default function ListItem({ video }: ListItemProps) {
         volume={0}
       />
       <div className="min-w-0 relative flex-auto mt-8 w-[85%]">
-        <Link href={`/projects/${video.snippet.resourceId.videoId}`}>
+        <Link href={`/projects/${video.id.videoId}`}>
           <h2 className="font-semibold text-purple-500 truncate pr-20">{video.snippet.title}</h2>
         </Link>
         <dl className="mt-2 flex flex-wrap text-sm leading-6 font-medium">
