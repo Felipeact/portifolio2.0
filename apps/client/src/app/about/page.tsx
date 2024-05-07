@@ -1,246 +1,246 @@
-'use client'
-import { motion, useInView } from "framer-motion"
-import { Outfit, Roboto } from "next/font/google"
-import Image from "next/image"
-import { Cards, HardDrives } from "phosphor-react"
-import { useRef, useState } from "react"
+// 'use client'
+// import { motion, useInView } from "framer-motion"
+// import { Outfit, Roboto } from "next/font/google"
+// import Image from "next/image"
+// import { Cards, HardDrives } from "phosphor-react"
+// import { useRef, useState } from "react"
 
-import StudyingImg from '../../images/Studying-amico.svg'
+// import StudyingImg from '../../images/Studying-amico.svg'
 
-const outfit = Outfit({
-  subsets: ['latin'],
-  display: 'swap',
-})
+// const outfit = Outfit({
+//   subsets: ['latin'],
+//   display: 'swap',
+// })
 
-const roboto = Roboto({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: '400'
-})
+// const roboto = Roboto({
+//   subsets: ['latin'],
+//   display: 'swap',
+//   weight: '400'
+// })
 
-const show = {
-  opacity: 1,
-  display: "block"
-};
+// const show = {
+//   opacity: 1,
+//   display: "block"
+// };
 
-const hide = {
-  opacity: 0,
-  transitionEnd: {
-    display: "none"
-  }
-};
+// const hide = {
+//   opacity: 0,
+//   transitionEnd: {
+//     display: "none"
+//   }
+// };
 
-export default function About() {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-
-
-  return (
-    <main className="min-h-screen md:p-8 ">
-
-      <div className="mx-auto w-full lg:max-w-[78%] md:flex md:justify-center items-center mb-8">
-        <div className="flex flex-col items-center justify-center md:items-start  z">
-          <h1 className={`${outfit.className} font-bold text-6xl md:text-9xl mb-16 mt-40`}>
-            Felipe <br />
-            Viana
-          </h1>
-          <p className="text-3xl text-center md:w-3/4 md:text-left">Software Developer based in Vancouver Canada </p>
-        </div>
-        <div className="mx-auto mt-56">
-          <motion.div
-            className="w-52 h-52 md:w-80 md:h-80  mx-auto"
-            animate={{
-              scale: [1, 2, 2, 1, 1],
-              rotate: [0, 0, 180, 180, 0],
-              borderRadius: ["0%", "0%", "50%", "50%", "0%"]
-            }}
-            transition={{
-              duration: 2,
-              ease: "easeInOut",
-              times: [0, 0.2, 0.5, 0.8, 1],
-              repeat: Infinity,
-              repeatDelay: 5
-            }}
-          >
-            <Image src={StudyingImg} alt="Studying Img" />
-          </motion.div>
-        </div>
-      </div>
-
-      <div className="mx-auto w-11/12 mt-40 md:flex md:justify-between ">
-        <div className="flex items-center justify-center mb-8 p-8 md:flex-col md:justify-start">
-          <h2 className={`${outfit.className} text-6xl capitalize font-bold text-right md:mb-14`}> 2+ </h2>
-          <p className={`${roboto.className} text-4xl capitalize font-bold text-center md:w-[24%] md:text-start`}> Years experience working</p>
-        </div>
-        <div className="md:w-1/2 md:p-8">
-          <h2 className={`${outfit.className} text-3xl capitalize font-bold mb-8 text-center md:text-left md:mx-auto `}> Software Developer, Passionate for Learning new Technologies and Developing Systems.</h2>
-
-          <div className="flex flex-col justify-center items-center sm:flex-row gap-4 md:mt-12">
-            <div className=" bg-purple-500 rounded-lg w-[322px] h-[304px] mb-8 flex flex-col justify-end p-8">
-              <Cards size={32} className="mb-4" />
-              <p>Front End Developer</p>
-              <a href="/projects" className="mt-4">Discover More</a>
-            </div>
-
-            <div className=" bg-gray-600 rounded-lg w-[322px] h-[304px] mb-8 flex flex-col justify-end p-8">
-              <HardDrives size={32} className="mb-4" />
-              <p>Back End Developer</p>
-              <a href="/projects" className="mt-4">Discover More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="mx-auto w-[80%] lg:max-w-[78%] mt-12 md:text-left  md:flex md:flex-col">
-        <h2 className="text-6xl font-bold"> My Time Line </h2>
-        <motion.div
-        >
-          <section className="mt-8">
-            <h3 className="text-3xl font-bold mb-4">2023</h3>
-
-            <div className=' mb-4' >
-              <p className=' before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>Started Computer System at BCIT</p>
-              <p className='text-stone-300 ml-12'> After finished my React JS certification I decided to join a college to improve more my knowledge.</p>
-            </div>
-
-            <div className='mb-4' >
-              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> Dispatcher </p>
-              <p className='text-stone-300 ml-12'> Im working as dispatcher at Diamond Delivery </p>
-            </div>
-
-            <div className='mb-4' >
-              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> My Portifolio </p>
-              <p className='text-stone-300 ml-12'> Started to design my portifolio </p>
-            </div>
-          </section>
-        </motion.div>
-        <motion.div
-          className="mt-4"
-          animate={isVisible ? show : hide}
-        >
-
-          <section>
-            <h3 className="text-3xl font-bold mb-4">2022</h3>
-
-            <div className='mb-4' >
-              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>From Driver to Dispatcher </p>
-              <p className='text-stone-300 ml-12'> I was working as a driver for a company
-                called Diamond Delivery and after 8 I got a offer to work as dispatcher</p>
-            </div>
-
-            <div className='mb-4' >
-              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> Working on front end Projects </p>
-            </div>
-
-            <div className='mb-4' >
-              <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>Web Developer Volunteer </p>
-            </div>
-
-          </section>
-
-        </motion.div>
-        <span
-          className="cursor-pointer"
-          onClick={() => setIsVisible(!isVisible)}
-        >
-          {isVisible ? 'close' : ' show more'}
-        </span>
-      </div>
+// export default function About() {
+//   const [isVisible, setIsVisible] = useState(false);
+//   const ref = useRef(null)
+//   const isInView = useInView(ref, { once: true })
 
 
-      <div className="mx-auto w-[80%] lg:max-w-[78%] mt-12">
-        <h2 className="text-6xl capitalize font-bold mb-14 ">Education</h2>
+//   return (
+//     <main className="min-h-screen md:p-8 ">
 
-        <div >
-          <div className="md:w-11/12 md:flex md:justify-between mb-8 " ref={ref} style={{
-          transform: isInView ? "none" : "translateX(200px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-        }}>
-            <motion.div 
-            className="cursor-pointer"
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setIsVisible(!isVisible)}
-            >
-              <h3 className="text-4xl capitalize font-bold mb-2">Computer System</h3>
-              <p className="mb-2">British Columbia Institute of Technology <span>(BCIT)</span></p>
-              <span>Vancouver | Canada</span>
-              <span className="block text-purple-600 font-bold">see more</span>
-            </motion.div >
-            <span className="hidden md:block md:p-1 md:border md:border-green-400 md:rounded-lg md:font-bold md:h-fit ">Current</span>
-          </div>
+//       <div className="mx-auto w-full lg:max-w-[78%] md:flex md:justify-center items-center mb-8">
+//         <div className="flex flex-col items-center justify-center md:items-start  z">
+//           <h1 className={`${outfit.className} font-bold text-6xl md:text-9xl mb-16 mt-40`}>
+//             Felipe <br />
+//             Viana
+//           </h1>
+//           <p className="text-3xl text-center md:w-3/4 md:text-left">Software Developer based in Vancouver Canada </p>
+//         </div>
+//         <div className="mx-auto mt-56">
+//           <motion.div
+//             className="w-52 h-52 md:w-80 md:h-80  mx-auto"
+//             animate={{
+//               scale: [1, 2, 2, 1, 1],
+//               rotate: [0, 0, 180, 180, 0],
+//               borderRadius: ["0%", "0%", "50%", "50%", "0%"]
+//             }}
+//             transition={{
+//               duration: 2,
+//               ease: "easeInOut",
+//               times: [0, 0.2, 0.5, 0.8, 1],
+//               repeat: Infinity,
+//               repeatDelay: 5
+//             }}
+//           >
+//             <Image src={StudyingImg} alt="Studying Img" />
+//           </motion.div>
+//         </div>
+//       </div>
+
+//       <div className="mx-auto w-11/12 mt-40 md:flex md:justify-between ">
+//         <div className="flex items-center justify-center mb-8 p-8 md:flex-col md:justify-start">
+//           <h2 className={`${outfit.className} text-6xl capitalize font-bold text-right md:mb-14`}> 2+ </h2>
+//           <p className={`${roboto.className} text-4xl capitalize font-bold text-center md:w-[24%] md:text-start`}> Years experience working</p>
+//         </div>
+//         <div className="md:w-1/2 md:p-8">
+//           <h2 className={`${outfit.className} text-3xl capitalize font-bold mb-8 text-center md:text-left md:mx-auto `}> Software Developer, Passionate for Learning new Technologies and Developing Systems.</h2>
+
+//           <div className="flex flex-col justify-center items-center sm:flex-row gap-4 md:mt-12">
+//             <div className=" bg-purple-500 rounded-lg w-[322px] h-[304px] mb-8 flex flex-col justify-end p-8">
+//               <Cards size={32} className="mb-4" />
+//               <p>Front End Developer</p>
+//               <a href="/projects" className="mt-4">Discover More</a>
+//             </div>
+
+//             <div className=" bg-gray-600 rounded-lg w-[322px] h-[304px] mb-8 flex flex-col justify-end p-8">
+//               <HardDrives size={32} className="mb-4" />
+//               <p>Back End Developer</p>
+//               <a href="/projects" className="mt-4">Discover More</a>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+
+//       <div className="mx-auto w-[80%] lg:max-w-[78%] mt-12 md:text-left  md:flex md:flex-col">
+//         <h2 className="text-6xl font-bold"> My Time Line </h2>
+//         <motion.div
+//         >
+//           <section className="mt-8">
+//             <h3 className="text-3xl font-bold mb-4">2023</h3>
+
+//             <div className=' mb-4' >
+//               <p className=' before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>Started Computer System at BCIT</p>
+//               <p className='text-stone-300 ml-12'> After finished my React JS certification I decided to join a college to improve more my knowledge.</p>
+//             </div>
+
+//             <div className='mb-4' >
+//               <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> Dispatcher </p>
+//               <p className='text-stone-300 ml-12'> Im working as dispatcher at Diamond Delivery </p>
+//             </div>
+
+//             <div className='mb-4' >
+//               <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> My Portifolio </p>
+//               <p className='text-stone-300 ml-12'> Started to design my portifolio </p>
+//             </div>
+//           </section>
+//         </motion.div>
+//         <motion.div
+//           className="mt-4"
+//           animate={isVisible ? show : hide}
+//         >
+
+//           <section>
+//             <h3 className="text-3xl font-bold mb-4">2022</h3>
+
+//             <div className='mb-4' >
+//               <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>From Driver to Dispatcher </p>
+//               <p className='text-stone-300 ml-12'> I was working as a driver for a company
+//                 called Diamond Delivery and after 8 I got a offer to work as dispatcher</p>
+//             </div>
+
+//             <div className='mb-4' >
+//               <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'> Working on front end Projects </p>
+//             </div>
+
+//             <div className='mb-4' >
+//               <p className='before:content-["🔵"] before:m-2 text-xl font-medium mb-2'>Web Developer Volunteer </p>
+//             </div>
+
+//           </section>
+
+//         </motion.div>
+//         <span
+//           className="cursor-pointer"
+//           onClick={() => setIsVisible(!isVisible)}
+//         >
+//           {isVisible ? 'close' : ' show more'}
+//         </span>
+//       </div>
+
+
+//       <div className="mx-auto w-[80%] lg:max-w-[78%] mt-12">
+//         <h2 className="text-6xl capitalize font-bold mb-14 ">Education</h2>
+
+//         <div >
+//           <div className="md:w-11/12 md:flex md:justify-between mb-8 " ref={ref} style={{
+//           transform: isInView ? "none" : "translateX(200px)",
+//           opacity: isInView ? 1 : 0,
+//           transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+//         }}>
+//             <motion.div 
+//             className="cursor-pointer"
+//             whileTap={{ scale: 0.95 }}
+//             onClick={() => setIsVisible(!isVisible)}
+//             >
+//               <h3 className="text-4xl capitalize font-bold mb-2">Computer System</h3>
+//               <p className="mb-2">British Columbia Institute of Technology <span>(BCIT)</span></p>
+//               <span>Vancouver | Canada</span>
+//               <span className="block text-purple-600 font-bold">see more</span>
+//             </motion.div >
+//             <span className="hidden md:block md:p-1 md:border md:border-green-400 md:rounded-lg md:font-bold md:h-fit ">Current</span>
+//           </div>
           
-          <motion.div 
-          className="mt-8"
-          animate={isVisible ? show : hide}
-          >
-            <table className="w-11/12 border-spacing-y-2 border-separate table-auto mb-1">
-              <thead>
-                <tr>
-                  <th className="font-normal text-left px-8 py-4">Title</th>
-                  <th className="font-normal text-left px-8 py-4">Grade</th>
-                </tr>
-              </thead>
+//           <motion.div 
+//           className="mt-8"
+//           animate={isVisible ? show : hide}
+//           >
+//             <table className="w-11/12 border-spacing-y-2 border-separate table-auto mb-1">
+//               <thead>
+//                 <tr>
+//                   <th className="font-normal text-left px-8 py-4">Title</th>
+//                   <th className="font-normal text-left px-8 py-4">Grade</th>
+//                 </tr>
+//               </thead>
 
-              <tbody>
+//               <tbody>
 
-                <tr>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Relational Database & SQL</td>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg "> 94 </td>
-                </tr>
+//                 <tr>
+//                   <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Relational Database & SQL</td>
+//                   <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg "> 94 </td>
+//                 </tr>
 
-                <tr>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Intro Web Development</td>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg"> 92 </td>
-                </tr>
+//                 <tr>
+//                   <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Intro Web Development</td>
+//                   <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg"> 92 </td>
+//                 </tr>
 
-                <tr>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Applied Computer Concepts</td>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-purple-600 font-bold rounded-r-lg"> in progress ... </td>
-                </tr>
+//                 <tr>
+//                   <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Applied Computer Concepts</td>
+//                   <td className="px-8 py-4 border-none bg-[#ffffff] text-purple-600 font-bold rounded-r-lg"> in progress ... </td>
+//                 </tr>
 
-                <tr>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Programming Part1 Python </td>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-purple-600 font-bold rounded-r-lg"> in progress ... </td>
-                </tr>
+//                 <tr>
+//                   <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Programming Part1 Python </td>
+//                   <td className="px-8 py-4 border-none bg-[#ffffff] text-purple-600 font-bold rounded-r-lg"> in progress ... </td>
+//                 </tr>
 
-              </tbody>
-            </table>
+//               </tbody>
+//             </table>
 
-            <table className=" border-spacing-y-2 border-separate table-auto mb-8">
-              <thead>
-                <tr>
-                  <th className="font-normal text-left px-8 py-4">GPA</th>
-                  <th className="font-normal text-left px-8 py-4">Total</th>
-                </tr>
-              </thead>
+//             <table className=" border-spacing-y-2 border-separate table-auto mb-8">
+//               <thead>
+//                 <tr>
+//                   <th className="font-normal text-left px-8 py-4">GPA</th>
+//                   <th className="font-normal text-left px-8 py-4">Total</th>
+//                 </tr>
+//               </thead>
 
-              <tbody>
-                <tr>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Overall GPA</td>
-                  <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg "> 93 </td>
-                </tr>
-              </tbody>
-            </table>
-          </motion.div>
-        </div>
+//               <tbody>
+//                 <tr>
+//                   <td className="px-8 py-4 border-none bg-[#ffffff] text-black rounded-l-lg">Overall GPA</td>
+//                   <td className="px-8 py-4 border-none bg-[#ffffff] text-green-600 font-bold rounded-r-lg "> 93 </td>
+//                 </tr>
+//               </tbody>
+//             </table>
+//           </motion.div>
+//         </div>
 
-        <div className="md:w-11/12 md:flex md:justify-between pb-24" ref={ref} style={{
-          transform: isInView ? "none" : "translateX(-200px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-        }}>
-          <div className="cursor-pointer">
-            <h3 className="text-4xl capitalize font-bold mb-2">React JS Developer</h3>
-            <p className="mb-2">Rocketseat</p>
-            <span>Online | Brazil</span>
-          </div>
-          <span className="hidden md:block md:p-1 md:border md:border-purple-600 md:rounded-lg md:font-bold md:h-fit ">Closed</span>
-        </div>
+//         <div className="md:w-11/12 md:flex md:justify-between pb-24" ref={ref} style={{
+//           transform: isInView ? "none" : "translateX(-200px)",
+//           opacity: isInView ? 1 : 0,
+//           transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+//         }}>
+//           <div className="cursor-pointer">
+//             <h3 className="text-4xl capitalize font-bold mb-2">React JS Developer</h3>
+//             <p className="mb-2">Rocketseat</p>
+//             <span>Online | Brazil</span>
+//           </div>
+//           <span className="hidden md:block md:p-1 md:border md:border-purple-600 md:rounded-lg md:font-bold md:h-fit ">Closed</span>
+//         </div>
 
-      </div>
+//       </div>
 
-    </main>
-  )
-}
+//     </main>
+//   )
+// }

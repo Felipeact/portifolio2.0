@@ -26,8 +26,8 @@ export default function Home() {
         <div className="flex-1 ">
           <div className="inset-0 flex justify-center items-center z-0">
             <div className="h-[80vh] w-full ">
-              <video className="w-full h-full" autoPlay preload='none'>
-                <source src="../../" type="video/mp4" />
+              <video className="w-full h-full object-fill" autoPlay preload='none' loop muted>
+                <source src="https://upload-images-projects.s3.amazonaws.com/HomeVideoV1.mp4" type="video/mp4" />
                 
               </video>
             </div>
