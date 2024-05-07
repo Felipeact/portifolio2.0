@@ -25,10 +25,6 @@ export function FeedbackContentStep( { feedbackType, onFeedbackRestartRequested,
       await api.post('/email', { description, name, company, email})
     }
 
-    if ( feedbackTypeInfo.title == 'Feedback'){
-      await api.post('/feedback', { description, name, company})
-    }
-
     onFeedbackSent();
   }
 

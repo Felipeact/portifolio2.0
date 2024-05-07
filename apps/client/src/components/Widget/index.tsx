@@ -7,7 +7,7 @@ export function Widget() {
 
 
   return (
-    <Popover className="fixed bottom-4 right-4 md:bottom-8 md:right-8 flex flex-col items-end">
+    <Popover className="fixed bottom-4 right-4 md:bottom-8 md:right-8 flex flex-col items-end z-10">
       <Popover.Panel>
         <WidgetForm />
       </Popover.Panel>
@@ -17,7 +17,7 @@ export function Widget() {
         
         <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-linear"> 
           <span className="pl-2"></span>
-          Feedback
+          Contact Me
         </span>
       
       </Popover.Button>

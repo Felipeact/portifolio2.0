@@ -8,10 +8,7 @@ import { FeedbackSuccessStep } from "./Steps/FeedBackSuccessStep";
 export const feedbackTypes = {
   BUG: {
     title: 'Email',
-  },
-  OTHER: {
-    title: 'Feedback',
-  },
+  }
 
 }
 

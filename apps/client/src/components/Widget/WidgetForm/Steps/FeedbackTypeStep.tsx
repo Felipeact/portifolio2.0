@@ -9,7 +9,7 @@ export function FeedbackTypeStep( { onFeedbackTypeChanged } : FeedbackTypeStepPr
   return (
     <>
     <header>
-        <span className="text-xl leading-6 "> Feedback </span>
+        <span className="text-xl leading-6 "> Contact Me </span>
 
         <CloseButton />
       </header>
