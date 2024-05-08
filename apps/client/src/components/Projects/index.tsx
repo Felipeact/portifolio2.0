@@ -101,7 +101,7 @@ export default function Projects({ title }: ProjectsProps) {
 
                 {/* Description */}
                 <p className='text-xl text-center p-4'>
-                    Welcome to my world of gaming, where innovation meets inspiration, and every line of code is a step closer to unlocking the next level of interactive storytelling.
+                    Welcome to my world! where innovation meets inspiration, and every line of code is a step closer to unlocking the next level of interactive storytelling.
                 </p>
 
                 <motion.ul

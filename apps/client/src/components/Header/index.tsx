@@ -16,7 +16,7 @@ export function Header() {
   const [navbar, setNavbar] = useState(false);
 
   return(
-    <header className={`${outfit.className} w-full ${ navbar ? 'h-screen' : 'h-[5rem]'} overflow-hidden bg-gray-700 border-b border-gray-600 fixed z-10 `}>
+    <header className={`${outfit.className} w-full ${ navbar ? 'h-screen' : 'h-[5rem]'} overflow-hidden bg-gray-700 border-b border-gray-600 fixed z-50 `}>
       <nav className="w-full">
         <div className="justify-between px-4 mx-auto lg:max-w-[80%] md:items-center md:flex md:px-8">
           <div>
