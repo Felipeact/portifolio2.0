@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Outfit } from 'next/font/google'
 
 import MyPhoto from "../../../public/myphoto.jpg"
-import { motion, useInView, useMotionValueEvent, useScroll, } from 'framer-motion';
+import { motion, useInView, useScroll, } from 'framer-motion';
 import { useRef } from 'react';
 
 const outfit = Outfit({
