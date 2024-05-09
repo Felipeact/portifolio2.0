@@ -43,16 +43,9 @@ export default function AboutMe({ title }: AboutMeProps) {
                 {/* My Image */}
                 <motion.div
                     className="w-96 h-96 mx-auto my-4 rounded-full shadow-md overflow-hidden "
-                    initial={{ rotateY: 0 }}
-                    animate={{ rotateY: 180 }}
-                    transition={{
-                        duration: 0.8, // Adjust duration for slower animation
-                        repeat: Infinity,
-                        repeatType: "mirror",
-                        repeatDelay: 0.1,
-                    }}
+                   
                 >
-                    <Image src={MyPhoto} width={0} height={0} alt="Studying Img" className=" w-full object-cover h-auto" />
+                    <Image src={MyPhoto} width={0} height={0} alt="Studying Img" className=" w-full object-cover h-auto z-0" />
                 </motion.div>
 
                 {/* mMore about me */}
