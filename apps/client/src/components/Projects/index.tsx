@@ -2,41 +2,23 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { fetchEntries } from '../../services/contentful';
 import Link from 'next/link';
-
-
+import { Video } from '../../types/types';
 
 
 interface ProjectsProps {
     title: string;
 }
 
-interface VideoUrl {
-    fields: {
-        description: string;
-        title: string;
-        file: {
-            url: string;
-            fileName: string;
-            contentType: string;
-        }
-    }
-}
 
-interface Video {
-    fields: {
-        title: string;
-        description: string;
-        videoUrl: VideoUrl;
-    }
-
-}
 
 export default function Projects({ title }: ProjectsProps) {
     const [shouldAnimate, setShouldAnimate] = useState(true);
     const [entries, setEntries] = useState<Video[]>([]);
     const videoRef = useRef<HTMLVideoElement>(null);
 
-    
+    console.log(entries)
+
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -59,6 +41,7 @@ export default function Projects({ title }: ProjectsProps) {
             clearInterval(intervalId);
         };
     }, []);
+
 
     // Your animation variants
     const container = {
@@ -111,7 +94,7 @@ export default function Projects({ title }: ProjectsProps) {
                     animate={shouldAnimate ? 'visible' : 'hidden'} // Animate initially and every 2 minutes
                 >
                     {entries.map((index) => (
-                        <Link href={`projects/${index.fields.title}`} key={index.fields.title} className='hover:border-solid hover:border-2 hover:border-purple-500'>
+                        <Link href={`projects/${index.sys.id}`} key={index.fields.title} className='hover:border-solid hover:border-2 hover:border-purple-500'>
                             <motion.li key={index.fields.title} className="item bg-white rounded-md w-full" variants={item}>
                                 <div className='w-full h-full'>
                                     <video
