@@ -1,4 +1,8 @@
 {
-  "extends": "next/core-web-vitals"
-  
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off",  // because you're using the App Router
+    "react/no-unescaped-entities": "warn",       // optional: show warnings for unescaped apostrophes
+    "@next/next/no-img-element": "warn"          // or "off" if you're okay with <img>
+  }
 }
