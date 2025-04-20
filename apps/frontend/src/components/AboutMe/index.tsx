@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from 'next/image'
 import { Outfit } from 'next/font/google'
 
-import { motion } from 'framer-motion';
 
 import MyPhoto from "../../../public/myphoto.png"
 
@@ -43,12 +42,12 @@ export function AboutMe({ title }: AboutMeProps) {
                 </div>
 
                 {/* My Image */}
-                <motion.div
+                <div
                     className=" md:w-96 md:h-96 mx-auto my-4 rounded-full shadow-md overflow-hidden "
                    
                 >
                     <Image src={MyPhoto} width={0} height={0} alt="Studying Img" className=" w-full object-cover h-auto z-0" />
-                </motion.div>
+                </div>
 
                 {/* mMore about me */}
                 <div className='p-4'>
