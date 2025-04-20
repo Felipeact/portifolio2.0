@@ -30,7 +30,7 @@ export function AboutMe({ title }: AboutMeProps) {
 
                     {/* Short Introduction  */}
                     <p className="p-4 text-xl text-center">
-                        I'm Felipe Viana, a passionate gameplay programmer with a relentless drive to craft immersive and captivating gaming experiences.
+                        I am Felipe Viana, a passionate gameplay programmer with a relentless drive to craft immersive and captivating gaming experiences.
                         With a fervent love for both technology and creativity, I thrive in the dynamic world where code meets artistry,
                         bringing virtual worlds to life one line at a time.
                     </p>
@@ -55,15 +55,15 @@ export function AboutMe({ title }: AboutMeProps) {
 
                     <p className="text-xl text-center">
                         Driven by a profound fascination for interactive storytelling and game mechanics,
-                        I've embarked on a journey to master the craft of gameplay programming.
-                        With a keen eye for detail and a dedication to pushing the boundaries of what's possible,
+                        I have embarked on a journey to master the craft of gameplay programming.
+                        With a keen eye for detail and a dedication to pushing the boundaries of what is possible,
                         I constantly seek to innovate and elevate gameplay experiences to new heights.
                     </p>
 
 
                     <p className="text-xl text-center p-4">
                         In every project I undertake, my goal is clear: to create experiences that not only entertain but resonate,
-                        leaving players with memories that linger long after they've put down the controller.
+                        leaving players with memories that linger long after they have put down the controller.
                         Join me on this journey as we delve into the boundless realms of possibility, where imagination knows no bounds and gameplay knows no limits.
                     </p>
 
