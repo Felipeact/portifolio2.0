@@ -1,0 +1,27 @@
+{
+    "$schema": "https://railway.com/railway.schema.json",
+    "build": {
+      "builder": "NIXPACKS",
+      "buildCommand": "npm run build && npm run prepare",
+      "watchPatterns": [
+        "apps/backend"
+      ]
+    },
+    "deploy": {
+      "runtime": "V2",
+      "numReplicas": 1,
+      "startCommand": "npm start",
+      "preDeployCommand": [
+        "npm install && npx prisma generate && npx prisma migrate deploy"
+      ],
+      "sleepApplication": false,
+      "multiRegionConfig": {
+        "us-west2": {
+          "numReplicas": 1
+        }
+      },
+      "restartPolicyType": "ON_FAILURE",
+      "restartPolicyMaxRetries": 10
+    }
+  }
+  
