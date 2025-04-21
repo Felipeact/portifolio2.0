@@ -17,8 +17,8 @@ router.post(
 );
 
 router.get('/', BlogController.getAllBlogs);
+router.get('/latest', BlogController.getLastAddedBlogs);
 router.get('/:id', BlogController.getBlogById);
 router.delete('/:id', BlogController.deleteBlog);
-router.get('/latest', BlogController.getLastAddedBlogs, );
 
 export default router;

@@ -26,6 +26,7 @@ model Blog {
   description5 String
 
   createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
   
   photos      Photo[]
   videos      Video[]

@@ -15,6 +15,9 @@ export class Blog {
   photos: Photo[];
   video: Video[];
 
+  createdAt: Date; 
+  updatedAt: Date;  
+
   constructor(
     id: number,
     title: string,
@@ -27,7 +30,9 @@ export class Blog {
     description4: string,
     description5: string,
     photos: Photo[] = [],
-    video: Video[] = []
+    video: Video[] = [],
+    createdAt: Date = new Date(),
+    updatedAt: Date = new Date()
   ) {
     this.id = id;
     this.type = type;
@@ -41,16 +46,18 @@ export class Blog {
     this.description5 = description5;
     this.photos = photos;
     this.video = video;
+    this.createdAt = createdAt;
+    this.updatedAt = updatedAt;
   }
 
   static fromRequest(body: any, photos: Photo[], video: Video[]): Blog {
     return new Blog(
       0, // ID will be auto-generated
+      body.title,
+      body.description,
       body.type,
       body.engine,
       body.thumbnail,
-      body.title,
-      body.description,
       body.description2,
       body.description3,
       body.description4,

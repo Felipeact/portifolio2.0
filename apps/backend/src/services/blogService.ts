@@ -27,12 +27,12 @@ export class BlogService {
     return prisma.blog.findMany({ include: { photos: true, videos: true } });
   }
 
-  static async getLastAddedBlogs()
-  {
-    return prisma.blog.findMany({ 
+  static async getLastAddedBlogs() {
+    return prisma.blog.findMany({
       take: 4,
-      orderBy: { createdAt : 'desc'},
-      include: { photos: true, videos: true } })
+      orderBy: { createdAt: 'desc' },
+      include: { photos: true, videos: true }
+    });
   }
 
   static async getBlogById(id: string) {

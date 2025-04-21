@@ -16,6 +16,7 @@ const outfit = Outfit({
 export function MyThoughts() {
   const blog = useLatestBlogs();
 
+  console.log(blog);
 
   return (
     <div>

@@ -49,13 +49,14 @@ export class BlogController {
 
   static async getAllBlogs(req: Request, res: Response) {
     const blogs = await BlogService.getAllBlogs();
-    res.json({ name: "Felipe Viana", blogs });
+    console.log(blogs)
+    res.json(blogs);
   }
 
   static async getBlogById(req: Request, res: Response )
   {
      const blog = await BlogService.getBlogById(req.params.id);
-     res.sendStatus(204);
+     res.json(blog)
   }
 
   static async deleteBlog(req: Request, res: Response) {
@@ -63,9 +64,13 @@ export class BlogController {
     res.sendStatus(204);
   }
 
-  static async getLastAddedBlogs(req: Request, res: Response)
-  {
-    const lastAddedBlogs = await BlogService.getLastAddedBlogs();
-    res.json(lastAddedBlogs)
+  static async getLastAddedBlogs(req: Request, res: Response) {
+    try {
+      const lastAddedBlogs = await BlogService.getLastAddedBlogs();
+      res.json(lastAddedBlogs); // ✅ return actual data
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Failed to get last added blogs' });
+    }
   }
 }
