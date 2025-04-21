@@ -10,13 +10,14 @@ router.post(
   '/',
   upload.fields([
     { name: 'photos', maxCount: 10 },
-    { name: 'videos', maxCount: 1 }
+    { name: 'videos', maxCount: 1 },
+    { name: 'thumbnail', maxCount: 1 }
   ]),
   BlogController.createBlog
 );
 
 router.get('/', BlogController.getAllBlogs);
-// router.get('/:id', BlogController.getBlogById);
+router.get('/:id', BlogController.getBlogById);
 router.delete('/:id', BlogController.deleteBlog);
 router.get('/latest', BlogController.getLastAddedBlogs, );
 

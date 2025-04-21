@@ -5,9 +5,12 @@ export class BlogController {
   static async createBlog(req: Request, res: Response) {
     try {
       const {
-        title, description, type, engine, thumbnail,
+        title, description, type, engine,
         description2, description3, description4, description5
       } = req.body;
+      
+      const thumbnailFile = (req.files as any)?.thumbnail?.[0] || null;
+      const thumbnail = thumbnailFile ? thumbnailFile.path : '';
 
       // ✅ Ensure photos & videos are always arrays
       const photos = (req.files as any)?.photos?.[0] || null;
@@ -47,6 +50,12 @@ export class BlogController {
   static async getAllBlogs(req: Request, res: Response) {
     const blogs = await BlogService.getAllBlogs();
     res.json({ name: "Felipe Viana", blogs });
+  }
+
+  static async getBlogById(req: Request, res: Response )
+  {
+     const blog = await BlogService.getBlogById(req.params.id);
+     res.sendStatus(204);
   }
 
   static async deleteBlog(req: Request, res: Response) {

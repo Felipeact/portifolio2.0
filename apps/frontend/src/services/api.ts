@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'https://improved-zebra-jq4w54r77vj3496-5000.app.github.dev/api/blogs',
+  baseURL: 'https://backend-project-production-0262.up.railway.app/api',
 });

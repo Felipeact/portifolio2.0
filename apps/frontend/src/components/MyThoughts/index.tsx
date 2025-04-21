@@ -2,11 +2,9 @@
 import Image from "next/image";
 import { Outfit } from 'next/font/google'
 
-import { data } from "@/services/data";
 import { MoreButton } from "../MoreButton";
 import { SearchButton } from "../SearchButton";
-import { useEffect } from "react";
-import { api } from "@/services/api";
+import { useLatestBlogs } from "@/services/apiCalls";
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -16,12 +14,8 @@ const outfit = Outfit({
 
 
 export function MyThoughts() {
+  const blog = useLatestBlogs();
 
-  useEffect(( ) => {
-    api.get('/latest').then( response => {
-      console.log(response.data)
-    })
-  },[])
 
   return (
     <div>
@@ -32,7 +26,7 @@ export function MyThoughts() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-8">
 
-        {data.blog.map(index => (
+        {blog?.map(index => (
 
           <div className="bg-white shadow-md rounded-lg p-4 flex " key={index.id}>
             <div>
