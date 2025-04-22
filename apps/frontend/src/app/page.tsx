@@ -1,22 +1,15 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import Separator from '@/components/Separator';
 import { motion } from 'framer-motion';
 import { Suspense } from 'react';
 
-const AboutMe = dynamic(() => import('@/components/AboutMe').then(mod => mod.AboutMe), {
-  ssr: false,
-});
-const LatestProjects = dynamic(() => import('@/components/LatestProjects').then(mod => mod.LatestProjects), {
-  ssr: false,
-});
-const MyThoughts = dynamic(() => import('@/components/MyThoughts').then(mod => mod.MyThoughts), {
-  ssr: false,
-});
-const TechStack = dynamic(() => import('@/components/TechStack').then(mod => mod.TechStack), {
-  ssr: false,
-});
+import { LatestProjects } from '@/components/LatestProjects';
+import { AboutMe } from '@/components/AboutMe';
+import { TechStack } from '@/components/TechStack';
+import { MyThoughts } from '@/components/MyThoughts';
+
+
 
 // Fade In animation configuration
 const fadeInProps = {
