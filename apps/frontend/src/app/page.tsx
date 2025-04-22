@@ -14,7 +14,7 @@ const LatestProjects = dynamic(() => import('@/components/LatestProjects').then(
 const MyThoughts = dynamic(() => import('@/components/MyThoughts').then(mod => mod.MyThoughts), {
   ssr: false,
 });
-const TechStack = dynamic(() => import('@/components/TechStack ').then(mod => mod.TechStack), {
+const TechStack = dynamic(() => import('@/components/TechStack').then(mod => mod.TechStack), {
   ssr: false,
 });
 
