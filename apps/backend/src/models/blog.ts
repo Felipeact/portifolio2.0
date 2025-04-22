@@ -12,9 +12,9 @@ export class Blog {
   description3: string;
   description4: string;
   description5: string;
+  tags: string[]; // <-- New tags field
   photos: Photo[];
   video: Video[];
-
   createdAt: Date; 
   updatedAt: Date;  
 
@@ -29,6 +29,7 @@ export class Blog {
     description3: string,
     description4: string,
     description5: string,
+    tags: string[] = [], // <-- Include in constructor
     photos: Photo[] = [],
     video: Video[] = [],
     createdAt: Date = new Date(),
@@ -44,6 +45,7 @@ export class Blog {
     this.description3 = description3;
     this.description4 = description4;
     this.description5 = description5;
+    this.tags = tags;
     this.photos = photos;
     this.video = video;
     this.createdAt = createdAt;
@@ -62,6 +64,7 @@ export class Blog {
       body.description3,
       body.description4,
       body.description5,
+      body.tags || [], // <-- Safely extract tags
       photos,
       video
     );

@@ -7,7 +7,6 @@ import { Outfit } from 'next/font/google'
 
 import { data } from "@/services/data";
 import Separator from "@/components/Separator";
-import Image from "next/image";
 
 const outfit = Outfit({
     subsets: ['latin'],
@@ -20,7 +19,7 @@ export default function Projects() {
 
 
     return (
-        <section id="projects" className="mt-20">
+        <section id="projects" className="mt-20 flex-grow">
 
 
             <h3 className={`${outfit.className} text-center text-4xl my-12 text-purple-500 font-bold`}> Projects </h3>

@@ -14,6 +14,8 @@ interface BlogProps
   description3: string;
   description4: string;
   description5: string;
+  createdAt: string;
+  tags: string[]
   // photos: Photo[];
   // video: Video[];
 }
@@ -40,5 +42,21 @@ export function useBlogs() {
     }, []);
   
     return blogs;
+}
+
+export function useBlogById( id: string) 
+{
+  const [ blog, setBlog ] = useState<BlogProps>();
+
+  useEffect(() => {
+
+    api.get(`/blogs/${id}`).then((response) =>{
+      setBlog(response.data);
+    })
+
+  },[])
+
+  return blog;
+
 }
 

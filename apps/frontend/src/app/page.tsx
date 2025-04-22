@@ -1,19 +1,37 @@
-'use client'
-import { AboutMe } from '@/components/AboutMe';
-import { LatestProjects } from '@/components/LatestProjects/Index';
-import { MyThoughts } from '@/components/MyThoughts';
+'use client';
+
+import dynamic from 'next/dynamic';
 import Separator from '@/components/Separator';
-import { TechStack } from '@/components/TechStack ';
+import { motion } from 'framer-motion';
+import { Suspense } from 'react';
 
+const AboutMe = dynamic(() => import('@/components/AboutMe').then(mod => mod.AboutMe), {
+  ssr: false,
+});
+const LatestProjects = dynamic(() => import('@/components/LatestProjects').then(mod => mod.LatestProjects), {
+  ssr: false,
+});
+const MyThoughts = dynamic(() => import('@/components/MyThoughts').then(mod => mod.MyThoughts), {
+  ssr: false,
+});
+const TechStack = dynamic(() => import('@/components/TechStack ').then(mod => mod.TechStack), {
+  ssr: false,
+});
 
+// Fade In animation configuration
+const fadeInProps = {
+  initial: { opacity: 0, y: 60 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 1, ease: 'easeInOut' },
+};
 
 export default function Home() {
-
   return (
-    <div>
+    <div className="flex-grow">
 
+      {/* Hero Section */}
       <div className="relative flex-1 mt-4">
-        {/* Text Overlay */}
         <section className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
           <h2 className="text-2xl sm:text-4xl font-bold text-white drop-shadow-md">
             Software & Game Developer
@@ -21,10 +39,8 @@ export default function Home() {
           <p className="mt-4 text-gray-100 text-sm sm:text-base drop-shadow-sm">
             Passionate about Unreal Engine, C++, and Web Development.
           </p>
-          
         </section>
 
-        {/* Background Video */}
         <div className="h-[80vh] w-full">
           <video
             className="w-full h-full object-cover"
@@ -42,15 +58,37 @@ export default function Home() {
         </div>
       </div>
 
-      <LatestProjects />
-      <Separator />
-      <AboutMe title='About Me' />
-      <TechStack />
-      <Separator />
-      <MyThoughts />
-      
+      {/* Latest Projects */}
+      <motion.div {...fadeInProps}>
+        <Suspense fallback={<div className="text-center">Loading Latest Projects...</div>}>
+          <LatestProjects />
+        </Suspense>
+      </motion.div>
 
+      <Separator />
+
+      {/* About Me */}
+      <motion.div {...fadeInProps} transition={{ ...fadeInProps.transition, delay: 0.2 }}>
+        <Suspense fallback={<div className="text-center">Loading About Me...</div>}>
+          <AboutMe title="About Me" />
+        </Suspense>
+      </motion.div>
+
+      {/* Tech Stack */}
+      <motion.div {...fadeInProps} transition={{ ...fadeInProps.transition, delay: 0.3 }}>
+        <Suspense fallback={<div className="text-center">Loading Tech Stack...</div>}>
+          <TechStack />
+        </Suspense>
+      </motion.div>
+
+      <Separator />
+
+      {/* My Thoughts */}
+      <motion.div {...fadeInProps} transition={{ ...fadeInProps.transition, delay: 0.4 }}>
+        <Suspense fallback={<div className="text-center">Loading Blog Posts...</div>}>
+          <MyThoughts />
+        </Suspense>
+      </motion.div>
     </div>
   );
 }
-

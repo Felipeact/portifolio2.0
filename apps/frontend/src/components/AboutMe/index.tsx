@@ -36,7 +36,7 @@ export function AboutMe({ title }: AboutMeProps) {
                     </p>
 
 
-                    <Link href="/blog" className="block bg-black text-white font-bold p-6 rounded-full w-2/4 my-8 mx-auto bg-[url(../../public/giphy.gif)] animate-bounce text-center">
+                    <Link href="/blog" className="block bg-black text-white font-bold p-6 rounded-full w-[] md:w-2/4 my-8 mx-auto bg-[url(../../public/giphy.gif)] animate-bounce text-center">
                         My Blog
                     </Link>
 

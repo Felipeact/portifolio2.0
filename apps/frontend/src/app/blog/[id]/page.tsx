@@ -1,10 +1,19 @@
 'use client'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation';
+
+import { useBlogById } from '@/services/apiCalls';
 
 export default function BlogPage() {
   const [mainImage, setMainImage] = useState<string>(
     "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
   );
+
+  const pathname = usePathname();
+  const blogId = pathname.replace('/blog/', '');
+  
+  const blog = useBlogById(blogId);
+
 
   return (
     <main className="mt-4">
@@ -12,7 +21,7 @@ export default function BlogPage() {
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-20 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-5xl font-bold mb-4">
-            Creating a Dynamic HUD in Unreal Engine Using UMG
+            {blog?.title}
           </h1>
           <p className="text-lg">
             Beginner-friendly guide to building a responsive health, energy, and ammo HUD with Blueprints

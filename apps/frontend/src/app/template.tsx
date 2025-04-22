@@ -10,7 +10,7 @@ export default function Template({ children }: {
   
   
   return (
-    <div className="min-h-screen bg-gray-100 p-6 scroll-smooth">
+    <div className="min-h-screen bg-gray-100 p-6 scroll-smooth flex flex-col">
         <Header />
         {children}
         <Contact />

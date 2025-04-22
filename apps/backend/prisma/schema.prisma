@@ -27,7 +27,8 @@ model Blog {
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  
+
+  tags        String[]
   photos      Photo[]
   videos      Video[]
 }
