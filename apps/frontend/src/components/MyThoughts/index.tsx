@@ -37,7 +37,7 @@ export function MyThoughts() {
           <div className="bg-white shadow-md rounded-lg p-4 flex " key={index.id}>
             <div>
               <Image
-                src="https://backend-project-production-0262.up.railway.app/uploads/b84cd381eaf7ab52d7bbdbbc877caf18"
+                src={index.thumbnail}
                 alt={index.title}
                 width={500}
                 height={500}

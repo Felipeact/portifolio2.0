@@ -4,7 +4,13 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['backend-project-production-0262.up.railway.app'], // or your server domain
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/**', // Allow all paths under this host
+      },
+    ],
   },
   webpack(config) {
     config.module.rules.push({

@@ -1,8 +1,6 @@
 import express from 'express';
-import multer from 'multer';
+import upload from '../config/multer';
 import { BlogController } from '../controllers/blogController';
-
-const upload = multer({ dest: 'uploads/' });
 
 const router = express.Router();
 
@@ -10,7 +8,7 @@ router.post(
   '/',
   upload.fields([
     { name: 'photos', maxCount: 10 },
-    { name: 'videos', maxCount: 1 },
+    { name: 'videos', maxCount: 2 },
     { name: 'thumbnail', maxCount: 1 }
   ]),
   BlogController.createBlog
@@ -19,6 +17,13 @@ router.post(
 router.get('/', BlogController.getAllBlogs);
 router.get('/latest', BlogController.getLastAddedBlogs);
 router.get('/:id', BlogController.getBlogById);
-router.delete('/:id', BlogController.deleteBlog);
+router.delete('/:id', async (req, res) => {
+  try {
+    await BlogController.deleteBlog(req, res);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to delete blog' });
+  }
+});
+
 
 export default router;

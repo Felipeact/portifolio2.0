@@ -3,6 +3,7 @@ import cors from 'cors';
 import blogRoutes from './routes/blogRoutes';
 
 
+
 const app = express();
 app.use(cors());
 app.use(express.json());
