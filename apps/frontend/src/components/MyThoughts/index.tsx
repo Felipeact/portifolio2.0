@@ -45,6 +45,16 @@ export function MyThoughts() {
               />
               <h4 className="text-xl font-semibold mt-4">{index.title}</h4>
               <p className="text-gray-600">{getShortDescription(index.description)}</p>
+              <div className="flex flex-wrap mt-2">
+              {index.tags?.map((tag: string) => (
+                <span
+                  key={tag}
+                  className="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
 
               <div className="flex items-center justify-between">
 
