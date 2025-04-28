@@ -50,6 +50,86 @@ export class BlogController {
     res.json(blog);
   }
 
+  
+  static async updateBlog(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
+      const stringId = String(id);
+  
+      const {
+        title, description, type, engine,
+        description2, description3, description4, description5, tags
+      } = req.body;
+  
+      const thumbnailFile = (req.files as any)?.thumbnail?.[0] || null;
+      const photos = (req.files as any)?.photos || [];
+      const videos = (req.files as any)?.videos || [];
+  
+      let uploadedThumbnail = '';
+      let uploadedPhotos = [];
+      let uploadedVideos = [];
+  
+      // Upload thumbnail if exists
+      if (thumbnailFile) {
+        const uploadResult = await cloudinary.uploader.upload(thumbnailFile.path, {
+          folder: 'blog_assets',
+          resource_type: 'image'
+        });
+        uploadedThumbnail = uploadResult.secure_url;
+      }
+  
+      // Upload photos if any
+      if (photos.length > 0) {
+        uploadedPhotos = await Promise.all(
+          photos.map(async (photo: any) => {
+            const uploadResult = await cloudinary.uploader.upload(photo.path, {
+              folder: 'blog_assets',
+              resource_type: 'image'
+            });
+            return {
+              title: photo.originalname,
+              size: String(photo.size),
+              description: 'Photo',
+              url: uploadResult.secure_url
+            };
+          })
+        );
+      }
+  
+      // Upload videos if any
+      if (videos.length > 0) {
+        uploadedVideos = await Promise.all(
+          videos.map(async (video: any) => {
+            const uploadResult = await cloudinary.uploader.upload(video.path, {
+              folder: 'blog_assets',
+              resource_type: 'video'
+            });
+            return {
+              title: video.originalname,
+              size: String(video.size),
+              description: 'Video',
+              url: uploadResult.secure_url
+            };
+          })
+        );
+      }
+  
+      const updatedBlog = await BlogService.updateBlog(stringId, {
+        type, engine, 
+        thumbnail: uploadedThumbnail, // If '' then will fallback to old one
+        title, description,
+        description2, description3, description4, description5, tags,
+        photos: uploadedPhotos,
+        videos: uploadedVideos
+      });
+  
+      res.status(200).json(updatedBlog);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Failed to update blog' });
+    }
+  }
+
   static async deleteBlog(req: Request, res: Response) {
     try {
       const blog = await BlogService.getBlogById(req.params.id);
@@ -86,6 +166,8 @@ export class BlogController {
       res.status(500).json({ error: 'Failed to delete blog and its assets' });
     }
   }
+
+ 
 
   static async getLastAddedBlogs(req: Request, res: Response) {
     try {

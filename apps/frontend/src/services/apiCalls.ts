@@ -16,8 +16,16 @@ interface BlogProps
   description5: string;
   createdAt: string;
   tags: string[]
-  // photos: Photo[];
+  photos: Photo[]
   // video: Video[];
+}
+
+interface Photo {
+  id: number;
+  url: string
+  title: string;
+  size: number;
+  description: string;
 }
 
 export function useLatestBlogs() {
