@@ -41,7 +41,7 @@ export function MyThoughts() {
                 alt={index.title}
                 width={500}
                 height={500}
-                className="w-full h-[64] object-fit rounded-md"
+                className="w-full h-[20rem] object-fit rounded-md"
               />
               <h4 className="text-xl font-semibold mt-4">{index.title}</h4>
               <p className="text-gray-600">{getShortDescription(index.description)}</p>

@@ -128,7 +128,7 @@ export default function Blog() {
                 alt="Gameplay Ability System"
                 width={500}
                 height={500}
-                className="w-full h-40 object-cover rounded-md"
+                className="w-full h-[20rem] object-cover rounded-md"
                 priority
               />
               <h4 className="text-xl font-semibold mt-4">{blog.title}</h4>

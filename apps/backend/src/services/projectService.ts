@@ -1,8 +1,8 @@
 import { prisma } from '../prismaClient';
 
-export class BlogService {
-  static async createBlog(data: any) {
-    return await prisma.blog.create({
+export class ProjectService {
+  static async createProject(data: any) {
+    return await prisma.project.create({
       data: {
         ...data,
         photos: {
@@ -23,20 +23,20 @@ export class BlogService {
     });
   }
 
-  static async getAllBlogs() {
-    return prisma.blog.findMany({ include: { photos: true, videos: true } });
+  static async getAllProjects() {
+    return prisma.project.findMany({ include: { photos: true, videos: true } });
   }
 
-  static async getLastAddedBlogs() {
-    return prisma.blog.findMany({
+  static async getLastAddedProjects() {
+    return prisma.project.findMany({
       take: 4,
       orderBy: { createdAt: 'desc' },
       include: { photos: true, videos: true }
     });
   }
 
-  static async getBlogById(id: string) {
-    return prisma.blog.findUnique({
+  static async getProjectById(id: string) {
+    return prisma.project.findUnique({
       where: { id },
       include: { photos: true, videos: true }
     });
@@ -44,24 +44,24 @@ export class BlogService {
 
 
 
-  static async updateBlog(id: string, data: any) {
-    const existingBlog = await prisma.blog.findUnique({
+  static async updateProject(id: string, data: any) {
+    const existingproject = await prisma.project.findUnique({
       where: { id },
       include: { photos: true, videos: true }
     });
   
-    if (!existingBlog) {
-      throw new Error('Blog not found');
+    if (!existingproject) {
+      throw new Error('project not found');
     }
   
     // Manage thumbnail
-    const thumbnail = data.thumbnail ? data.thumbnail : existingBlog.thumbnail;
+    const thumbnail = data.thumbnail ? data.thumbnail : existingproject.thumbnail;
   
     // If no new photos/videos uploaded, keep old ones
-    const photos = data.photos && data.photos.length > 0 ? data.photos : existingBlog.photos;
-    const videos = data.videos && data.videos.length > 0 ? data.videos : existingBlog.videos;
+    const photos = data.photos && data.photos.length > 0 ? data.photos : existingproject.photos;
+    const videos = data.videos && data.videos.length > 0 ? data.videos : existingproject.videos;
   
-    return prisma.blog.update({
+    return prisma.project.update({
       where: { id },
       data: {
         ...data,
@@ -92,17 +92,9 @@ export class BlogService {
     });
   }
 
-  static async deleteBlogAssets(blogId: string) {
-    await prisma.photo.deleteMany({
-      where: { blogId },
-    });
-    await prisma.video.deleteMany({
-      where: { blogId },
-    });
-  }
   
-  static async deleteBlog(id: string) {
-    return prisma.blog.delete({ 
+  static async deleteProject(id: string) {
+    return prisma.project.delete({ 
       where: { id },
       include: { photos: true, videos: true}
     });
