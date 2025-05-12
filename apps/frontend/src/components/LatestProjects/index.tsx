@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { Outfit } from 'next/font/google'
 
-import { data } from "@/services/data";
 import { SearchButton } from "../SearchButton";
+import { data } from '@/services/data';
 
 const outfit = Outfit({
     subsets: ['latin'],

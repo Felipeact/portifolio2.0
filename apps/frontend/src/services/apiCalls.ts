@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { api } from "./api";
 
 
-interface BlogProps
+export interface BlogProps
 {
   id: string;
   type: string;

@@ -5,8 +5,8 @@ import { Outfit } from 'next/font/google'
 
 
 
-import { data } from "@/services/data";
 import Separator from "@/components/Separator";
+import { data } from "@/services/data";
 
 const outfit = Outfit({
     subsets: ['latin'],

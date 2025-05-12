@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useBlogById } from '@/services/apiCalls';
 
@@ -9,10 +9,15 @@ export default function BlogPage() {
   const pathname = usePathname();
   const blogId = pathname.replace('/blog/', '');
   const blog = useBlogById(blogId);
+
+
   
-  const [mainImage, setMainImage] = useState<string>(
-    "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-  );
+  console.log(blog)
+
+  
+  
+  const [mainImage, setMainImage] = useState<any>(`${blog?.thumbnail}`);
+
 
   return (
     <main className="mt-4 flex flex-col items-center">
@@ -34,7 +39,7 @@ export default function BlogPage() {
           <img
             className="h-auto w-full rounded-xl object-cover object-center max-h-[500px] transition-all duration-500"
             src={mainImage}
-            alt="main-hero"
+            alt={blog?.title}
           />
         </div>
 
@@ -43,8 +48,8 @@ export default function BlogPage() {
             {blog?.photos.map((photo) => (
               <div key={photo.id} className="group relative">
                 <img
-                  onClick={() => setMainImage(photo.title)}
-                  src={photo.title}
+                  onClick={() => setMainImage(photo.url)}
+                  src={photo.url}
                   className="object-cover object-center h-24 w-full rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
                   alt={`gallery-${photo.title}`}
                 />
@@ -57,43 +62,54 @@ export default function BlogPage() {
       <div className="max-w-4xl w-full px-4 mt-14 space-y-12 text-gray-800">
 
         {blog?.description && (
-          <section>
-            <img
-            className="h-auto w-full rounded-xl object-cover object-center max-h-[500px] transition-all duration-500"
-            src={blog?.photos[2].url}
-            alt="main-hero"
-          />
+          // <section>
+          //   <img
+          //   className="h-auto w-full rounded-xl object-cover object-center max-h-[500px] transition-all duration-500"
+          //   src={blog?.photos[2].url}
+          //   alt="main-hero"
+          // />
             <p className="text-lg leading-relaxed">{blog.description}</p>
-          </section>
+          // </section>
         )}
 
         {blog?.description2 && (
           <section>
-            <h2 className="text-2xl font-bold mb-2">🖼️ Photo 2</h2>
+            {/* <h2 className="text-2xl font-bold mb-2">🖼️ Photo 2</h2> */}
             <p className="text-lg leading-relaxed">{blog.description2}</p>
           </section>
         )}
 
         {blog?.description3 && (
           <section>
-            <h2 className="text-2xl font-bold mb-2">🖼️ Photo 3</h2>
+            {/* <h2 className="text-2xl font-bold mb-2">🖼️ Photo 3</h2> */}
             <p className="text-lg leading-relaxed">{blog.description3}</p>
           </section>
         )}
 
         {blog?.description4 && (
           <section>
-            <h2 className="text-2xl font-bold mb-2">🖼️ Photo 4</h2>
+            {/* <h2 className="text-2xl font-bold mb-2">🖼️ Photo 4</h2> */}
             <p className="text-lg leading-relaxed">{blog.description4}</p>
           </section>
         )}
 
         {blog?.description5 && (
           <section>
-            <h2 className="text-2xl font-bold mb-2">🖼️ Photo 5</h2>
+            {/* <h2 className="text-2xl font-bold mb-2">🖼️ Photo 5</h2> */}
             <p className="text-lg leading-relaxed">{blog.description5}</p>
           </section>
         )}
+
+        <p>
+          <a 
+            href="https://github.com/felipeact" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-blue-400 hover:underline"
+          >
+            Visit my GitHub profile
+          </a>
+        </p>
         
       </div>
     </main>
