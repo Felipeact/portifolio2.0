@@ -14,31 +14,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const multer_1 = __importDefault(require("../config/multer"));
-const blogController_1 = require("../controllers/blogController");
+const projectController_1 = require("../controllers/projectController");
 const router = express_1.default.Router();
 router.post('/', multer_1.default.fields([
     { name: 'photos', maxCount: 10 },
     { name: 'videos', maxCount: 2 },
     { name: 'thumbnail', maxCount: 1 }
-]), blogController_1.BlogController.createBlog);
-router.get('/', blogController_1.BlogController.getAllBlogs);
-router.get('/latest', blogController_1.BlogController.getLastAddedBlogs);
-router.get('/:id', blogController_1.BlogController.getBlogById);
+]), projectController_1.ProjectController.createProject);
+router.get('/', projectController_1.ProjectController.getAllProjects);
+router.get('/latest', projectController_1.ProjectController.getLastAddedProjects);
+router.get('/:id', projectController_1.ProjectController.getProjectById);
 router.put('/:id', multer_1.default.fields([
     { name: 'photos', maxCount: 10 },
     { name: 'videos', maxCount: 2 },
     { name: 'thumbnail', maxCount: 1 }
-]), blogController_1.BlogController.updateBlog);
+]), projectController_1.ProjectController.updateProject);
 router.delete('/:id', multer_1.default.fields([
     { name: 'thumbnail', maxCount: 1 },
     { name: 'photos', maxCount: 10 },
     { name: 'videos', maxCount: 5 }
 ]), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        yield blogController_1.BlogController.deleteBlog(req, res);
+        yield projectController_1.ProjectController.deleteProject(req, res);
     }
     catch (err) {
-        res.status(500).json({ error: 'Failed to delete blog' });
+        res.status(500).json({ error: 'Failed to delete project' });
     }
 }));
 exports.default = router;

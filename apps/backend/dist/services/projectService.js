@@ -9,12 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlogService = void 0;
+exports.ProjectService = void 0;
 const prismaClient_1 = require("../prismaClient");
-class BlogService {
-    static createBlog(data) {
+class ProjectService {
+    static createProject(data) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield prismaClient_1.prisma.blog.create({
+            return yield prismaClient_1.prisma.project.create({
                 data: Object.assign(Object.assign({}, data), { photos: {
                         create: data.photos.map((photo) => (Object.assign({}, photo)))
                     }, videos: {
@@ -27,43 +27,43 @@ class BlogService {
             });
         });
     }
-    static getAllBlogs() {
+    static getAllProjects() {
         return __awaiter(this, void 0, void 0, function* () {
-            return prismaClient_1.prisma.blog.findMany({ include: { photos: true, videos: true } });
+            return prismaClient_1.prisma.project.findMany({ include: { photos: true, videos: true } });
         });
     }
-    static getLastAddedBlogs() {
+    static getLastAddedProjects() {
         return __awaiter(this, void 0, void 0, function* () {
-            return prismaClient_1.prisma.blog.findMany({
+            return prismaClient_1.prisma.project.findMany({
                 take: 4,
                 orderBy: { createdAt: 'desc' },
                 include: { photos: true, videos: true }
             });
         });
     }
-    static getBlogById(id) {
+    static getProjectById(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            return prismaClient_1.prisma.blog.findUnique({
+            return prismaClient_1.prisma.project.findUnique({
                 where: { id },
                 include: { photos: true, videos: true }
             });
         });
     }
-    static updateBlog(id, data) {
+    static updateProject(id, data) {
         return __awaiter(this, void 0, void 0, function* () {
-            const existingBlog = yield prismaClient_1.prisma.blog.findUnique({
+            const existingProject = yield prismaClient_1.prisma.project.findUnique({
                 where: { id },
                 include: { photos: true, videos: true }
             });
-            if (!existingBlog) {
-                throw new Error('Blog not found');
+            if (!existingProject) {
+                throw new Error('Project not found');
             }
             // Manage thumbnail
-            const thumbnail = data.thumbnail ? data.thumbnail : existingBlog.thumbnail;
+            const thumbnail = data.thumbnail ? data.thumbnail : existingProject.thumbnail;
             // If no new photos/videos uploaded, keep old ones
-            const photos = data.photos && data.photos.length > 0 ? data.photos : existingBlog.photos;
-            const videos = data.videos && data.videos.length > 0 ? data.videos : existingBlog.videos;
-            return prismaClient_1.prisma.blog.update({
+            const photos = data.photos && data.photos.length > 0 ? data.photos : existingProject.photos;
+            const videos = data.videos && data.videos.length > 0 ? data.videos : existingProject.videos;
+            return prismaClient_1.prisma.project.update({
                 where: { id },
                 data: Object.assign(Object.assign({}, data), { thumbnail, photos: {
                         deleteMany: {}, // Always clear old because we'll re-create
@@ -89,23 +89,23 @@ class BlogService {
             });
         });
     }
-    static deleteBlogAssets(blogId) {
+    static deleteProjectAssets(projectId) {
         return __awaiter(this, void 0, void 0, function* () {
             yield prismaClient_1.prisma.photo.deleteMany({
-                where: { blogId },
+                where: { projectId },
             });
             yield prismaClient_1.prisma.video.deleteMany({
-                where: { blogId },
+                where: { projectId },
             });
         });
     }
-    static deleteBlog(id) {
+    static deleteProject(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            return prismaClient_1.prisma.blog.delete({
+            return prismaClient_1.prisma.project.delete({
                 where: { id },
                 include: { photos: true, videos: true }
             });
         });
     }
 }
-exports.BlogService = BlogService;
+exports.ProjectService = ProjectService;
