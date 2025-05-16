@@ -7,6 +7,7 @@ import { Outfit } from 'next/font/google'
 
 import Separator from "@/components/Separator";
 import { AnimatePresence, motion } from "framer-motion";
+import { useProjects } from "@/services/apiCalls";
 
 const outfit = Outfit({
     subsets: ['latin'],
@@ -19,7 +20,7 @@ export default function Projects() {
     const [filterTags, setFilterTags] = useState<string[]>([]);
     const [showFilters, setShowFilters] = useState(false);
 
-    const allProjects : any = [];
+    const allProjects = useProjects(); 
 
     const toggleTag = (tag: string) => {
         setTempFilterTags(prev =>
@@ -143,7 +144,7 @@ export default function Projects() {
                                     playsInline
 
                                 >
-                                    <source src={project.url} type="video/mp4" />
+                                    <source src={project.thumbnail} type="video/mp4" />
                                 </video>
 
                                 {/* Title overlay at bottom of video */}

@@ -17,7 +17,7 @@ export interface BlogProps
   createdAt: string;
   tags: string[]
   photos: Photo[]
-  // video: Video[];
+  videos: Video[];
 }
 
 export interface ProjectProps
@@ -35,10 +35,19 @@ export interface ProjectProps
   createdAt: string;
   tags: string[]
   photos: Photo[]
-  // video: Video[];
+  videos: Video[];
 }
 
 interface Photo {
+  id: number;
+  url: string
+  title: string;
+  size: number;
+  description: string;
+}
+
+interface Video 
+{
   id: number;
   url: string
   title: string;
