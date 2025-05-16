@@ -9,12 +9,6 @@ export default function BlogPage() {
   const pathname = usePathname();
   const blogId = pathname.replace('/blog/', '');
   const blog = useBlogById(blogId);
-
-
-  
-  console.log(blog)
-
-  
   
   const [mainImage, setMainImage] = useState<any>(`${blog?.thumbnail}`);
 

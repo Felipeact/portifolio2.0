@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Outfit } from 'next/font/google'
 
 import { SearchButton } from "../SearchButton";
-import { data } from '@/services/data';
+import { useLatestProjects } from '@/services/apiCalls';
 
 const outfit = Outfit({
     subsets: ['latin'],
@@ -12,6 +12,9 @@ const outfit = Outfit({
 
 
 export function LatestProjects() {
+
+    const project = useLatestProjects();
+
     return (
 
         <section id="projects" className="mt-20">
@@ -19,7 +22,7 @@ export function LatestProjects() {
 
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center mt-8">
-                {data.projects.map((project) => (
+                {project.map((project) => (
 
                     <div
                         key={project.id}

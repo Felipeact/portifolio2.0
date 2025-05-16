@@ -35,7 +35,7 @@ export function MyThoughts() {
         {blog?.map(index => (
 
           <div className="bg-white shadow-md rounded-lg p-4 flex " key={index.id}>
-            <div>
+            <div className="flex flex-col justify-between">
               <Image
                 src={index.thumbnail}
                 alt={index.title}
