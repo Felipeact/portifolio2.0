@@ -38,7 +38,7 @@ export function LatestProjects() {
                                 playsInline
 
                             >
-                                <source src="https://upload-images-projects.s3.amazonaws.com/HomeVideoV1.mp4" type="video/mp4" />
+                                <source src={project.thumbnail} type="video/mp4" />
                             </video>
 
                             {/* Title overlay at bottom of video */}

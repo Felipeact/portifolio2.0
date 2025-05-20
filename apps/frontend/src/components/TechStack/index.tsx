@@ -18,7 +18,7 @@ const tools = [
 
 export function TechStack() {
   return (
-    <section className="py-12 bg-gray-100 dark:bg-gray-900">
+    <section className="py-12 bg-gray-10">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h3 className="text-2xl sm:text-3xl font-semibold mb-[6rem] text-purple-500">Tech Stack</h3>
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 justify-center items-center">
