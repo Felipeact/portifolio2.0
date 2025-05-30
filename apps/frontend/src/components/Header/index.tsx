@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from 'next/image';
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
+import { faWatchmanMonitoring } from "@fortawesome/free-brands-svg-icons";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -56,7 +57,7 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex">
-            <Link href="/projects" className={pathname === "/projects" ? ' font-bold' : ''}><span className="mx-4">Projects</span></Link>
+            <Link href="/projects" className={pathname === "/projects" ? ' font-bold' : ''}><span className="mx-4">Games</span></Link>
             <Link href="/blog" className={pathname === "/blog" ? ' font-bold' : ''}><span className="mx-4">Blog</span></Link>
             <Link href="#about" className="mx-4">About</Link>
             <Link href="#contact" className="mx-4">Contact</Link>
@@ -95,7 +96,7 @@ export function Header() {
           </Link>
 
           {/* Mobile Nav Links */}
-          <Link href="/projects" onClick={() => setMenuOpen(false)} className={pathname === "/projects" ? ' font-bold' : ''}><span className="py-2 text-xl">Projects</span></Link>
+          <Link href="/projects" onClick={() => setMenuOpen(false)} className={pathname === "/projects" ? ' font-bold' : ''}><span className="py-2 text-xl">Games</span></Link>
           <Link href="/blog" onClick={() => setMenuOpen(false)} className={pathname === "/blog" ? ' font-bold' : ''}><span className="py-2 text-xl">Blog</span></Link>
           <Link href="#about" onClick={() => setMenuOpen(false)}><span className="py-2 text-xl">About</span></Link>
           <Link href="#contact" onClick={() => setMenuOpen(false)}><span className="py-2 text-xl">Contact</span></Link>
@@ -104,3 +105,8 @@ export function Header() {
     </header>
   );
 }
+
+
+
+
+

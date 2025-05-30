@@ -4,7 +4,7 @@ import Separator from '@/components/Separator';
 import { motion } from 'framer-motion';
 import { Suspense } from 'react';
 
-import { LatestProjects } from '@/components/LatestProjects';
+import { LatestGames } from '@/components/LatestGames';
 import { AboutMe } from '@/components/AboutMe';
 import { TechStack } from '@/components/TechStack';
 import { MyThoughts } from '@/components/MyThoughts';
@@ -54,7 +54,7 @@ export default function Home() {
       {/* Latest Projects */}
       <motion.div {...fadeInProps}>
         <Suspense fallback={<div className="text-center">Loading Latest Projects...</div>}>
-          <LatestProjects />
+          <LatestGames />
         </Suspense>
       </motion.div>
 

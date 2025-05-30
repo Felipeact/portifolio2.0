@@ -20,7 +20,9 @@ export default function Projects() {
     const [filterTags, setFilterTags] = useState<string[]>([]);
     const [showFilters, setShowFilters] = useState(false);
 
-    const allProjects = useProjects(); 
+    const allProjects = useProjects();
+    
+    
 
     const toggleTag = (tag: string) => {
         setTempFilterTags(prev =>

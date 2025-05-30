@@ -9,8 +9,18 @@ export default function BlogPage() {
   const pathname = usePathname();
   const blogId = pathname.replace('/blog/', '');
   const blog = useBlogById(blogId);
-  
   const [mainImage, setMainImage] = useState<any>(`${blog?.thumbnail}`);
+
+  if (!blog) {
+      return (
+        <div className="flex flex-col justify-center items-center h-[40vh]">
+          <p>Loading Blog...</p>
+        </div>
+      )
+      
+    }
+  
+
 
 
   return (
@@ -19,10 +29,10 @@ export default function BlogPage() {
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-20 w-full text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-5xl font-extrabold mb-4 leading-tight">
-            {blog?.title}
+            {blog.title}
           </h1>
           <p className="text-lg opacity-80">
-            Beginner-friendly guide to building a responsive health, energy, and ammo HUD with Blueprints
+            
           </p>
         </div>
       </section>
@@ -33,13 +43,13 @@ export default function BlogPage() {
           <img
             className="h-auto w-full rounded-xl object-cover object-center max-h-[500px] transition-all duration-500"
             src={mainImage}
-            alt={blog?.title}
+            alt={blog.title}
           />
         </div>
 
         
           <div className="grid grid-cols-5 gap-4 mt-6">
-            {blog?.photos.map((photo) => (
+            {blog.photos.map((photo) => (
               <div key={photo.id} className="group relative">
                 <img
                   onClick={() => setMainImage(photo.url)}
