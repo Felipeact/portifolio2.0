@@ -86,7 +86,7 @@ export default function ProjectPage() {
           {project.description}
         </p>
 
-        <p dangerouslySetInnerHTML={{ __html: `${project.description3}`}} />
+        <p dangerouslySetInnerHTML={{ __html: `${project.description5}`}} />
       </section>
 
 

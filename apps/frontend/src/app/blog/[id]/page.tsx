@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useBlogById } from '@/services/apiCalls';
 
@@ -9,16 +9,18 @@ export default function BlogPage() {
   const pathname = usePathname();
   const blogId = pathname.replace('/blog/', '');
   const blog = useBlogById(blogId);
-  const [mainImage, setMainImage] = useState<any>(`${blog?.thumbnail}`);
-
+  const [mainImage, setMainImage] = useState<any>();
+  
   if (!blog) {
-      return (
-        <div className="flex flex-col justify-center items-center h-[40vh]">
+    return (
+      <div className="flex flex-col justify-center items-center h-[40vh]">
           <p>Loading Blog...</p>
         </div>
       )
       
     }
+
+  
   
 
 
@@ -42,7 +44,7 @@ export default function BlogPage() {
         <div className="flex justify-center">
           <img
             className="h-auto w-full rounded-xl object-cover object-center max-h-[500px] transition-all duration-500"
-            src={mainImage}
+            src={blog.thumbnail}
             alt={blog.title}
           />
         </div>

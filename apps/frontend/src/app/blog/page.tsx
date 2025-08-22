@@ -122,7 +122,7 @@ export default function Blog() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
           {filteredBlogs.map(blog => (
-            <div className="bg-white shadow-md rounded-lg p-4 flex flex-col justify-between" key={blog.id}>
+            <div className="bg-white shadow-md rounded-lg p-4 flex flex-col justify-between w-full" key={blog.id}>
               <Image
                 src={blog.thumbnail}
                 alt="Gameplay Ability System"
